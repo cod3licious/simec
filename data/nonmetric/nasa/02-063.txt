@@ -1,0 +1,60 @@
+Dolores Beasley
+Headquarters, Washington               April 4, 2002
+(Phone: 202/358-1753)
+
+Nancy Neal
+Goddard Space Flight Center, Greenbelt, Md.
+(Phone: 301/286-0039)
+
+RELEASE: 02-63
+
+PARTIAL LAUNCH VEHICLE AND SPACECRAFT 
+TO RE-ENTER EARTH'S ATMOSPHERE
+
+     The upper stage of a Pegasus launch vehicle with NASA's 
+first High Energy Transient Experiment (HETE-1) and the 
+Argentine SAC-B spacecraft still attached is predicted to re-
+enter the Earth's atmosphere at approximately 7 a.m. EDT 
+Sunday, April 7. This prediction is uncertain to within plus 
+or minus two days.
+
+The total weight of the upper stage and combined spacecraft 
+is 535 kilograms (1,177 pounds). Initial analysis indicates 
+that only four small stainless-steel batteries, weighing a 
+total of 15 kilograms (33 pounds) will survive re-entry.
+
+"The re-entry is uncontrolled, and due to potential solar 
+flux variations, time and location predictions will not be 
+reliable until only a few hours before the re-entry event," 
+said Scott Hull, Spacecraft Engineering Lead for Space 
+Systems Mission Operations at NASA's Goddard Space Flight 
+Center, Greenbelt, Md. 
+
+The U.S. Space Command will track HETE-1/SAC-B and the 
+launch-vehicle third stage until re-entry. NASA will monitor 
+the orbital parameters based on Space Command data and will 
+supply updates and technical information as needed.
+
+The HETE-1 satellite was launched Nov. 4, 1996, along with 
+SAC-B, on a Pegasus rocket from Wallops Island, Va. The 
+Pegasus rocket achieved a good orbit, but the third stage 
+failed to release the two satellites. As a result, SAC-B and 
+HETE-1 were unable to function as designed and both died due 
+to power failure within days of launch.
+
+SAC-B is connected to a Dual Payload Attach Fitting canister 
+containing HETE, which is in turn connected to the Pegasus 
+third stage. The combined stack is just over three and a half 
+meters (11.6 feet) long with a diameter of one meter (3.3 
+feet).
+
+The HETE mission was rebuilt and re-flown as HETE-2, with a 
+successful Pegasus launch Oct. 9, 2000.
+
+Updated information on the re-entry will be available on the 
+Internet at:
+
+http://www.gsfc.nasa.gov/topstory/20020401hetereenter.html
+
+                           -end-
+

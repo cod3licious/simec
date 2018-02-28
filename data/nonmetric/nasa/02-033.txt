@@ -1,0 +1,105 @@
+Jim Cast
+Headquarters, Washington          Feb. 22, 2002
+(Phone: 202/358-1779)
+
+Alan Buis
+Jet Propulsion Laboratory, Pasadena, Calif.
+(Phone: 818/354-0474)
+
+RELEASE: 02-33
+
+NASA'S QUIKSCAT SPACECRAFT TURNS OPERATIONAL
+
+     In a move to improve global weather forecasts and 
+ultimately save lives and property, the United States and 
+Europe have incorporated wind speed and direction data from 
+NASA's Quick Scatterometer spacecraft -- also known as 
+Quikscat -- into their operational global weather analysis 
+and forecast systems.
+
+Armed with data from Quikscat, forecasters can now predict 
+hazardous weather events over the oceans as much as six to 12 
+hours earlier. Launched June 19, 1999, the Quikscat 
+spacecraft operates in a Sun-synchronous, 800-kilometer (497-
+mile) near-polar orbit, circling Earth every 100 minutes, 
+taking approximately 400,000 measurements over 93 percent of 
+Earth's surface every day.
+
+In recent years data from the Quikscat scatterometer, 
+developed by NASA's Jet Propulsion Laboratory (JPL), 
+Pasadena, Calif., have proven useful in improving forecasts 
+of extreme wind events, such as hurricanes, and in monitoring 
+longer-term climatic effects such as El Nino. Quikscat's 
+SeaWinds scatterometer instrument is a specialized microwave 
+radar that continuously measures both the speed and direction 
+of winds near the ocean surface in all weather conditions.
+
+Participants in the Quikscat program include the National 
+Centers for Environmental Prediction, a branch of the 
+National Weather Service, Washington, and the European Centre 
+for Medium-Range Weather Forecasts, Reading, England. These 
+organizations' decision to assimilate and turn Quikscat data 
+into operational information culminates an intense inter-
+agency and international cooperative effort among NASA, the 
+National Oceanic and Atmospheric Adminstration (NOAA) and 
+European countries to demonstrate and validate Quikscat's 
+potential impact on weather forecasting.
+
+"Our implementation of Quikscat data has provided another 
+useful data source for improved surface wind forecasts," said 
+Stephen Lord, director of the National Centers for 
+Environmental Prediction's Environmental Modeling Center, 
+which developed the Quikscat data-processing in collaboration 
+with NASA and NOAA Satellite Services. 
+
+"The use of Quikscat data to improve weather forecasts 
+underscores the value of the mission beyond the scientific 
+research community," said Dr. Michael Freilich, Quikscat 
+principal investigator and a professor at Oregon State 
+University, Corvallis. "Realizing the full potential of 
+Quikscat data is possible only because of a series of unique 
+collaborations. NASA researchers and engineers worked 
+together to develop and calibrate the instrument and 
+algorithms. NOAA personnel, in partnership with NASA, enable 
+rapid delivery of near-real-time spacecraft data to forecast 
+centers. There also are the teams of meteorologists who are 
+developing and refining computer programs that incorporate 
+the data into models and display measurements for 
+forecasters."
+
+Helen Wood, director of NOAA's Office of Satellite Data 
+Processing and Distribution, said Quikscat data would 
+positively impact NOAA's weather forecasting and storm 
+warnings. "Quikscat data will help our forecasters more 
+accurately determine the paths and intensities of severe 
+winter storms, tropical storms and hurricanes, which will 
+save lives and property," she said. "The data are also used 
+by climate change researchers and commercial shipping 
+interests."
+
+The incorporation of Quikscat data was one of several recent 
+upgrades made to the European Centre for Medium-Range Weather 
+Forecasts' operational system. Cumulatively, the upgrades 
+have resulted in a robust improvement in forecasts of 
+atmospheric conditions over the Southern Hemisphere and in 
+the upper atmosphere. Their ability to forecast tropical 
+cyclone tracks has also been enhanced.  
+
+JPL manages Quikscat for NASA's Office of Earth Science, 
+Washington. JPL also built the scatterometer instrument and 
+provides ground science-processing systems. NASA's Goddard 
+Space Flight Center, Greenbelt, Md., managed development of 
+the satellite, designed and built by Ball Aerospace & 
+Technology Corp., Boulder, Colo.  
+
+NASA's Earth Science Enterprise is a long-term research and 
+technology program to examine Earth's land, oceans, 
+atmosphere, ice and life as a total integrated system. JPL is 
+a division of the California Institute of Technology in 
+Pasadena. 
+
+More information is available at:
+
+http://winds.jpl.nasa.gov/missions/quikscat/quikindex.html
+
+                         - end -

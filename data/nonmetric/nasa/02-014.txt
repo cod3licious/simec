@@ -1,0 +1,84 @@
+Michael Braukus
+Headquarters, Washington           Jan. 22, 2002
+(Phone: 202/358-1979)
+
+Jonas Dimo
+Ames Research Center, Moffett Field, Calif.
+(Phone: 650/604-5612)
+
+RELEASE: 02-14
+
+NASA SOFTWARE TO HELP SPEED AIRCRAFT DEPARTURES 
+
+     Researchers aim to avert airport gridlock with a new 
+software tool being evaluated in NASA's virtual control tower 
+simulator.
+
+NASA researchers and Dallas/Fort Worth air traffic 
+controllers conducted the second evaluation of the Surface 
+Management System (SMS), being developed at NASA's Ames 
+Research Center, Moffett Field, Calif. Current systems used 
+by airports don't provide controllers with accurate 
+information about the number of future departures. During the 
+various "rush hour" times at the airport, scheduled 
+departures often exceed runway capacity, creating delays.
+
+"The main objective of the Surface Management System is to 
+allow the controllers and airlines to collaboratively manage 
+departure operations and surface movements. The system 
+gathers relevant information from multiple sources, processes 
+it and displays the appropriate information and advisories to 
+the users," said Dr. Steve Atkins, SMS project lead at Ames. 
+"The system has the potential to decrease departure delays 
+significantly," he added.
+
+The information compiled by the system is displayed as 
+aircraft-location maps, departure timelines and load-capacity 
+graphs giving controllers timely data to effectively manage 
+aircraft movement between the terminal and the runway. With 
+this information, controllers can predict possible traffic 
+congestion and rapidly eliminate system bottlenecks.  
+
+Ames' Future Flight Central (FFC) air-traffic control tower 
+simulator was used for the evaluation. Future Flight central 
+gives controllers a unique facility to test software tools 
+with its detailed 360-degree views, providing controllers a 
+very realistic experience. The data collected will be used to 
+refine the SMS user interface and identify additional user 
+features. 
+
+"We presented a spectrum of ideas to a group of Federal 
+Aviation Administration controllers and airline 
+representatives to help us focus on what potential 
+capabilities would be most helpful. Our ideas have been 
+received positively," said Atkins.
+
+The realism provided by FFC will allow for the smooth 
+transition to the field-test portion of the evaluation. 
+Additional features such as integration with arrival 
+scheduling and other air traffic management tools will be 
+added as part of the staged evolution of the tool.  
+
+Other participants in the evaluation were representatives 
+from the Federal Aviation Administration's Free Flight 
+Program office, officials from major passenger and freight 
+carriers, and controllers from Memphis, Tenn., and Norfolk, 
+Va., airports. 
+
+The Surface Management System is being developed at Ames by 
+the Advanced Air Transportation Technologies Project, a part 
+of the Aviation Systems Capacity Program. Ames has been 
+conducting air-traffic control research and development since 
+the mid-1980s.
+
+More information about the Aviation Systems Capacity Program 
+can be found on the Internet at:
+
+http://www.asc.nasa.gov/
+
+More information about Future Flight Central is available at:
+
+http://ffc.arc.nasa.gov
+
+                        - end -
+

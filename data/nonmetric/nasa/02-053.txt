@@ -1,0 +1,52 @@
+Dolores Beasley
+Headquarters, Washington                   March 15, 2002
+(Phone: 202/358-1753)
+
+Carolina Martinez
+Jet Propulsion Laboratory, Pasadena, Calif.
+(Phone: 818/354-9382)
+
+RELEASE: 02-53
+
+NASA SELECTS ADVANCED TECHNOLOGY CONCEPT FOR TEST FLIGHT
+
+     NASA's New Millennium Program has selected two 
+organizations to lead the work on sensor and thrust-producing 
+technologies to control a space vehicle's flight path so the 
+payload responds only to gravitational forces.
+
+The Disturbance Reduction System technology is scheduled to 
+fly in 2006 as the Space Technology 7 project. Space 
+Technology 7 is designed to test and validate advanced 
+technologies for future use on NASA missions that have never 
+been flown in space. 
+
+The total NASA funding for Space Technology 7 is $62.6 
+million. The technology providers are Stanford University, 
+Stanford, Calif., and Busek Company Inc., Natick, Mass. 
+Stanford University will provide a highly sensitive 
+gravitational reference sensor that will measure the position 
+of a spacecraft with respect to an internal free-floating 
+mass. The Busek Company will provide a set of miniature ion 
+thrusters capable of controlling spacecraft position with 
+extremely fine precision. 
+
+"The Disturbance Reduction System is a promising new 
+technology that will pave the way for future space 
+observations of gravitational waves, giving us a whole new 
+eye on the universe," said Anne Kinney, Director of the 
+Astronomy and Physics Division, Office of Space Science, NASA 
+Headquarters. 
+
+The New Millennium Program was created in 1994 to identify, 
+develop and flight-validate advanced technologies that can 
+lower costs and enable critical performance of science 
+missions in the 21st century. The program is managed by the 
+Jet Propulsion Laboratory, Pasadena, Calif., for NASA's 
+Office of Earth Science and Office of Space Science, 
+Washington, D.C. JPL is a division of the California 
+Institute of Technology in Pasadena.
+
+More information on New Millennium is available at:  
+http://nmp.jpl.nasa.gov
+                          -end-

@@ -1,0 +1,92 @@
+Dolores Beasley
+Headquarters, Washington                    April 18, 2002
+(Phone: 202/358-1753)
+
+Bill Steigerwald
+Goddard Space Flight Center, Greenbelt, Md.
+(Phone: 301/286-5017
+
+RELEASE: 02-71
+
+DISCOVER A COMET WHILE ON THE INTERNET WITH SOHO
+
+     A new comet was discovered over the Internet by a 
+Chinese amateur astronomer visiting the website for the Solar 
+and Heliospheric Observatory (SOHO) spacecraft. The comet 
+"C/2002 G3 (SOHO)" was first reported on Friday, April 12, by 
+XingMing Zhou of BoLe city, in the XinJiang province of 
+China, who discovered the comet while watching SOHO real-time 
+images of the Sun on the Internet. The comet is a new comet, 
+not belonging to any known group.  
+
+SOHO, launched over six years ago as a project of 
+international cooperation between the European Space Agency 
+(ESA) and NASA, has discovered more than 420 comets in just 
+under six years. This makes the spacecraft the most prolific 
+comet finder in the history of astronomy. Most of the comets 
+were first spotted by amateurs around the world who 
+downloaded SOHO's real-time images to their home computers. 
+Anyone with Internet access can take part in the hunt for new 
+comets and be a comet discoverer.
+
+"From September 2000 to now I have been trying to find SOHO 
+comets, and I've discovered 13 comets, one of which, 
+designated '2001U9' and initially cataloged by the SOHO 
+project as 'SOHO-367,' was the brightest one in the last two 
+years," said Zhou, who previously spent more than 1,600 hours 
+since his 1985 graduation scanning the heavens with his 15cm 
+F/5.3 reflector telescope to discover a single comet. 
+
+"What's exciting about these near-sun comets is that we are 
+exploring a population of comets that has never been seen 
+before because they are very small and faint," said Douglas 
+Biesecker, a solar physicist with L3 Com Analytics 
+Corporation, Vienna, Va. "By the time their orbits take them 
+close to the Sun so they become bright, they are lost in the 
+Sun's glare and require a space-based coronagraph like that 
+on SOHO to be seen." Biesecker, who is affiliated with the 
+SOHO program at NASA's Goddard Space Flight Center in 
+Greenbelt, Md., confirms potential comet discoveries as they 
+are posted to the SOHO website. 
+
+C/2002 G3 (SOHO) will be visible in SOHO's Large Angle and 
+Spectrometric Coronagraph (LASCO) C3 images until Saturday, 
+April 20.  The comet was first visible late in the day on 
+Thursday, April 11. It entered the field of view at the 
+bottom edge, almost directly under the Sun. It is moving 
+upward to the left, and will eventually move back toward the 
+right, exiting from the LASCO C3 field of view at the top 
+edge, to the right of the Sun. First cataloged by the SOHO 
+project as "SOHO-422," it has been officially designated 
+C/2002 G3 (SOHO) by the International Astronomical Union. 
+
+The comet reached the point closest to the Sun in its orbit 
+on April 17 at about 1:30 a.m. Eastern Daylight Time, at a 
+distance of about 7.6 million miles (12.3 million 
+kilometers). As the week goes on, the comet will move through 
+the field of view more quickly.
+
+In all these images, the shaded disk is a mask in the 
+instrument that blots out direct sunlight, making faint 
+comets and the dim outer atmosphere of the Sun, or the 
+corona, visible. The white circle added within the disk shows 
+the size and position of the visible Sun.
+
+Solar radiation heats the comet, which in turn causes the 
+outgassing of its water molecules and dust. The dust scatters 
+sunlight at visible wavelengths, making the comet bright in 
+LASCO images. The water molecules break down into oxygen and 
+hydrogen atoms, and the hydrogen atoms interact with the 
+coronal plasma (electrified gas that comprises the extended 
+atmosphere of the Sun).
+
+All the SOHO images are freely available on the SOHO web 
+site: 
+http://sohowww.nascom.nasa.gov/
+
+More information about sun-grazing comets and how to spot new 
+ones can be found at:
+http://sungrazer.nascom.nasa.gov/
+Images and movies of the comet's passage are available at:
+http://soho.nascom.nasa.gov/hotshots/2002_04_15/
+                             -end-

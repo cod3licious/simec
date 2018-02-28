@@ -1,0 +1,90 @@
+Dwayne Brown
+Headquarters, Washington              March 5, 2002
+(Phone: 202/358-1726)
+
+Susan Hendrix
+Goddard Space Flight Center, Greenbelt, Md.
+(Phone: 301/286-7745)
+
+RELEASE: 02-40
+
+ADVANCED NASA COMMUNICATIONS SATELLITE 
+GIVES BROADBAND ACCESS NEW MEANING
+
+     NASA is ready to launch the second in a series of three 
+advanced Tracking and Data Relay Satellites, known as TDRS-I. 
+This latest addition to the fleet of seven on-orbit Tracking 
+and Data Relay Satellites will provide high data-rate 
+communication links with the Space Shuttle, International 
+Space Station, Hubble Space Telescope and a host of other 
+spacecraft, as well as tracking services for expendable 
+launch vehicles. 
+
+TDRS-I is scheduled to launch Friday, March 8, at 5:39 p.m. 
+EST, the beginning of a 40-minute launch window, which 
+extends until 6:19 p.m. EST.  
+
+"We're very excited about the new capabilities the advanced 
+TDRS will provide the international space program," said 
+Robert Jenkens Jr., TDRS Project Manager at NASA's Goddard 
+Space Flight Center in Greenbelt, Md.  
+
+Together, the new trio of satellites will help replenish and 
+maintain the specialized space communications capabilities of 
+the current TDRS constellation, which has served numerous 
+national and international space missions since 1983.
+
+TDRS-I features the following capabilities:
+
+*  S-band Single Access: Two 15-foot diameter steerable 
+antennas, used at the 2.0 to 2.3 GHz (Giga Hertz) band, 
+supply robust communications to user satellites with smaller 
+antennas and receive telemetry from expendable launch 
+vehicles during launch.
+
+*  Ku-band Single Access: The same two antennas, operating 
+from 13.7 to 15.0 GHz, provide higher bandwidth for user 
+satellites, provide high-resolution digital television for 
+Space Shuttle video communications and can quickly transfer 
+large volumes of data from tape or solid-state data recorders 
+aboard NASA scientific spacecraft.
+
+TDRS-I also features these new capabilities:
+
+*  Ka-band Single Access: This new higher-frequency service, 
+operating from 22.5 to 27.5 GHz, increases data rate 
+capabilities to 800 Megabits per second to provide 
+communications with future missions requiring high 
+bandwidths, such as multi-spectral instruments for Earth 
+science applications. 
+
+*  Multiple Access: Using a phased-array antenna, operating 
+in the 2.0 to 2.3 GHz range, the system can receive and relay 
+data simultaneously from five lower data-rate users, while 
+transmitting commands to a single user. 
+
+Transfer orbit operations, which will boost the 7,033-pound 
+spacecraft into a geosynchronous orbit 22,300 miles above the 
+Earth, are scheduled to occur during the two-week period 
+following the launch. Upon completion of on-orbit testing and 
+acceptance, TDRS-I will be renamed TDRS-9.  Goddard's 
+Operations Services Project will oversee operations of TDRS-
+9, using controllers at the White Sands Complex in New 
+Mexico.
+
+The TDRS replenishment program costs approximately $840 
+million, which includes the three satellites, launch 
+vehicles, White Sands Complex modifications and NASA program 
+costs. Boeing Satellite Systems of El Segundo, Calif., 
+designed, built and tested the three satellites under a 
+fixed-price contract with NASA. 
+
+Additional information about TDRS-I, as well as NASA's 
+complete Tracking and Data Relay Satellite System, is 
+available on the following Websites:
+ 
+http://tdrs.gsfc.nasa.gov/Tdrsproject/
+http://nmsp.gsfc.nasa.gov/tdrss/tdrsshome.html
+
+                         -end-
+

@@ -1,0 +1,106 @@
+Don Savage
+Headquarters, Washington                                  April 24, 2002
+(Phone: 202/358-1547)
+
+Nancy Neal
+Goddard Space Flight Center, Greenbelt, Md.
+(Phone: 301/286-0039)
+
+Ray Villard
+Space Telescope Science Institute, Baltimore
+(Phone: 410/338-4514)
+
+RELEASE: 02-73
+
+HUBBLE UNCOVERS OLDEST "CLOCKS" IN SPACE TO READ AGE OF UNIVERSE 
+
+ Pushing the limits of its powerful vision, NASA's Hubble Space Telescope 
+has uncovered the oldest burned-out stars in our Milky Way Galaxy. These 
+extremely old, dim "clockwork stars" provide a completely independent 
+reading on the age of the universe from previous methods.
+
+The ancient white dwarf stars, as seen by Hubble, turn out to be 12 to 
+13 billion years old. Because earlier Hubble observations show that the 
+first stars formed less than one billion years after the universe's 
+birth in the big bang, finding the oldest stars puts astronomers well 
+within arm's reach of calculating the absolute age of the universe. 
+
+Though previous Hubble research sets the age of the universe at 13 to 14 
+billion years based on the rate of expansion of space, the universe's 
+birthday is such a fundamental and profound value that astronomers have 
+long sought other age-dating techniques to cross-check their 
+conclusions. "This new observation short-circuits getting to the age 
+question, and offers a completely independent way of pinning down that 
+value," says Harvey Richer of the University of British Columbia, 
+Vancouver, Canada.
+
+The new age-dating observations were done by Richer and colleagues by 
+using Hubble to hunt for elusive ancient stars hidden inside a globular 
+star cluster 7,000 light-years away in the constellation Scorpius. The 
+results will be published in the Astrophysical Journal Letters.
+
+Conceptually, the new age-dating observation is as elegantly simple as 
+estimating how long ago a campfire burned by measuring the temperature 
+of the smoldering coals. For Hubble, the "coals" are white dwarf stars, 
+the burned-out remnants of the earliest stars in our galaxy. 
+
+Hot, dense spheres of carbon "ash" left behind by the long-dead star's 
+nuclear furnace, white dwarfs cool down at a predictable rate -- the 
+older the dwarf, the cooler it is, making it a perfect "clock" that has 
+been ticking for almost as long as the universe has existed.
+
+This approach has been recognized as more reliable than age-dating the 
+oldest stars still burning by nuclear fusion, which relies on complex 
+models and calculations about how a star burns its nuclear fuel and 
+ages. White dwarfs are easier to age-date because they are simply 
+cooling, but the trick has been finding the dimmest and hence longest-
+running "clocks."
+
+As white dwarfs cool they grow fainter, and this required that Hubble 
+train a steady gaze on the ancient globular star cluster M4 for eight 
+days over a 67-day period. This allowed for even fainter dwarfs to 
+become visible, until at last the coolest -- and oldest -- dwarfs were 
+seen. These stars are so feeble (30th magnitude -- considerably fainter 
+than originally anticipated for any Hubble telescope imaging with the 
+original cameras), they are less than one-billionth the apparent 
+brightness of the faintest stars that can be seen by the naked eye. 
+
+Globular clusters are the first pioneer settlers of the Milky Way. Many 
+coalesced to build the hub of our galaxy and formed billions of years 
+before the appearance of the Milky Way's magnificent pinwheel disk (as 
+further confirmed by Richer's observations). Today, 150 globular 
+clusters survive in the galactic halo. The globular cluster M4 was 
+selected because it is the nearest to Earth, so the intrinsically 
+feeblest white dwarfs are still apparently bright enough to be picked 
+out by Hubble.
+
+In 1928, Edwin Hubble's measurements of galaxies made him realize that 
+the universe was uniformly expanding, which meant the universe had a 
+finite age that could be estimated by mathematically "running the 
+expansion backward." Edwin Hubble first estimated the universe was only 
+two billion years old. Uncertainties over the true expansion rate led to 
+a spirited debate in the late 1970s, with estimates ranging from 8 
+billion to 18 billion years. Estimates of the ages of the oldest normal 
+"main-sequence" stars were at odds with the lower value, since stars 
+could not be older than the universe itself.
+
+In 1997 Hubble Space Telescope astronomers broke this impasse by 
+announcing a reliable age for the universe, calculated from a very 
+precise measurement of the expansion rate. The picture soon got more 
+complicated when astronomers using Hubble and ground-based observatories 
+discovered the universe was not expanding at a constant rate, but 
+accelerating due to an unknown repulsive force termed "dark energy." 
+When dark energy is factored into the universe's expansion history, 
+astronomers arrive at an age for the universe of 13-14 billion years. 
+This age is now independently verified by the ages of the "clockwork" 
+white dwarfs measured by Hubble.
+
+-end-
+
+Images, animation, illustrations and additional information are 
+available on the Internet at:
+
+http://oposite.stsci.edu/pubinfo/pr/2002/10
+
+http://oposite.stsci.edu/pubinfo/latest.html
+

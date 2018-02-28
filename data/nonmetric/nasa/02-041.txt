@@ -1,0 +1,93 @@
+Donald Savage/Dolores Beasley
+Headquarters, Washington                                  March 1, 2002
+(Phone: 202/358-1547)
+
+Guy Webster
+Jet Propulsion Laboratory, Pasadena, Calif. 
+(Phone: 818/354-5011)
+
+RELEASE: 02-41
+
+NASA'S MARS ODYSSEY UNVEILS EARLY SCIENCE RESULTS
+
+ Initial science data from NASA's Mars Odyssey spacecraft, which began 
+its mapping mission last week, portend some tantalizing findings by the 
+newest Martian visitor, including possible identification of 
+significant amounts of frozen water.
+
+"We are delighted with the quality of data we're seeing," said Dr. 
+Steve Saunders, Odyssey project scientist at NASA's Jet Propulsion 
+Laboratory (JPL), Pasadena, Calif. "We'll use it to build on what we've 
+learned from Mars Global Surveyor and other missions. Now we may 
+actually see water rather than guessing where it is or was. And with 
+the thermal images we are able to examine surface geology from a new 
+perspective." 
+
+"These preliminary Odyssey observations are the 'tip of the iceberg' of 
+the science results that are soon to come, so stay tuned," said Dr. Jim 
+Garvin, Lead Scientist of the Mars Exploration Program at NASA 
+Headquarters in Washington.
+
+New images taken by the thermal-emission imaging system show the 
+temperature of the surface at a remarkable level of clarity and detail 
+during both the Martian day and night. 
+
+Odyssey's camera system is studying Mars' surface mineralogy to reveal 
+geologic history. The thermal infrared images are thirty times sharper 
+than previously available, and the camera's visible-light images will 
+fill a gap in resolution between Viking Orbiter and Mars Global 
+Surveyor pictures. 
+
+Initial measurements by the gamma-ray spectrometer instrument suite 
+show the presence of significant amounts of hydrogen in the south polar 
+region of Mars. The high hydrogen content is most likely due to water 
+ice, though the amount of ice cannot be quantified yet. Further 
+analysis will be conducted to confirm the interpretation. 
+
+The detection of hydrogen is based both on the intensity of gamma rays 
+emitted by hydrogen, and by the intensity of neutrons that are 
+moderated by hydrogen. The neutron intensity was observed by the high-
+energy neutron detector and the neutron spectrometer.
+
+"The preliminary assessment of the gamma-ray spectrometer data 
+indicates the likely presence of hydrogen in the upper few feet of the 
+Martian surface, as sampled at spatial scales approximately 400 miles 
+across. Further analysis and another month or so of mapping will permit 
+more quantitative assessment of these observations and allow for a 
+refined interpretation," added Garvin.
+
+Measurements made by the Martian radiation-environment experiment 
+during Odyssey's cruise phase suggest that the daily dose of radiation 
+experienced by astronauts on their way from Earth to Mars would be more 
+than twice the dose endured by astronauts on the International Space 
+Station. Investigators are in the process of troubleshooting the 
+radiation experiment to determine why the instrument stopped 
+communicating. It was turned off in August 2001. 
+
+JPL, a division of the California Institute of Technology in Pasadena, 
+manages the 2001 Mars Odyssey mission for NASA's Office of Space 
+Science in Washington. Investigators at Arizona State University in 
+Tempe, the University of Arizona in Tucson and NASA's Johnson Space 
+Center, Houston, operate the science instruments. 
+
+Additional science partners are located at the Russian Aviation and 
+Space Agency, which provided the high-energy neutron detector, and at 
+Los Alamos National Laboratories, New Mexico, which provided the 
+neutron spectrometer. 
+
+Lockheed Martin Astronautics, Denver, is the prime contractor for the 
+project, and developed and built the orbiter. Mission operations are 
+conducted jointly from Lockheed Martin and from JPL.
+
+The latest images from Mars Odyssey are available on the Internet at:
+
+http://mars.jpl.nasa.gov/odyssey
+
+http://themis.asu.edu/latest
+
+Additional information about the spacecraft's neutron detector and 
+neutron spectrometer is available online at:
+
+http://grs.lpl.arizona.edu/results/presscon1/
+
+-end-

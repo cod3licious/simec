@@ -1,0 +1,91 @@
+Dolores Beasley
+Headquarters, Washington                                  Jan. 8, 2002
+(Phone: 202/358-1753) 
+
+Steve Roy
+Marshall Space Flight Center, Huntsville, Ala.
+(Phone: 256/544-6535)
+
+Megan Watzke
+Chandra X-ray Observatory Center, Cambridge, Mass.
+(Phone: 617/496-7998)
+
+RELEASE: 02-02
+
+CHANDRA FINDS GHOSTS OF ERUPTION IN GALAXY CLUSTER
+
+ "Ghostly" relics of an ancient eruption that tore through a cluster of 
+galaxies were recently uncovered by NASA's Chandra X-ray Observatory. 
+The discovery implies that galaxy clusters are the sites of enormously 
+energetic and recurring explosions, and may provide an explanation why 
+galaxy clusters behave like giant cosmic magnets.
+
+"Chandra's image revealed vast regions in the galaxy cluster Abell 2597 
+that contain almost no X-ray or radio emission. We call them ghost 
+cavities," said Brian McNamara of Ohio University in Athens today 
+during a press conference at the American Astronomical Society meeting 
+in Washington. "They appear to be remnants of an old explosion where 
+the radio emission has faded away over millions of years."
+
+The ghost cavities were likely created by extremely powerful 
+explosions, due to material falling toward a black hole millions of 
+times more massive than the Sun. As the matter swirled around the black 
+hole, located in a galaxy near the center of the cluster, it generated 
+enormous electromagnetic fields that expelled material from the 
+vicinity of the black hole at high speeds. 
+
+This explosive activity in Abell 2597 created jets of highly energetic 
+particles that cleared out voids in the hot gas. Because they are 
+lighter than the surrounding material, the cavities will eventually 
+push their way to the edge of the cluster, just as air bubbles in water 
+make their way to the surface.  
+
+Researchers also found evidence that this explosion was not a one-time 
+event. "We detected a small, bright radio source near the center of the 
+cluster that indicates a new explosion has occurred recently," said 
+team member Michael Wise of the Massachusetts Institute of Technology 
+in Cambridge, "so the cycle of eruption is apparently continuing."
+
+Though dim, the ghost cavities are not completely empty. They contain a 
+mixture of very hot gas, high-energy particles and magnetic fields -- 
+otherwise the cavities would have collapsed under the pressure of the 
+surrounding hot gas. 
+
+"Ghost cavities may be the vessels that transport magnetic fields 
+generated in a disk surrounding a giant black hole to the cluster gas 
+that is spread over a region a billion times larger," said McNamara. If 
+dozens of these cavities were created over the life of the cluster, 
+they could explain the surprisingly strong magnetic field of the 
+multimillion-degree gas that pervades the cluster. 
+
+Galaxy clusters are the largest known gravitationally bound structures 
+in the universe. Hundreds of galaxies swarm in giant reservoirs of 
+multimillion-degree gas that radiates most of its energy in X-rays. 
+Over the course of billions of years some of the gas should cool and 
+sink toward a galaxy in the center of the cluster where it could 
+trigger an outburst in the vicinity of the central massive black hole.
+
+Chandra observed Abell 2597 on July 28, 2000,for 40,000 seconds with 
+the Advanced CCD Imaging Spectrometer (ACIS) instrument. Pennsylvania 
+State University, University Park, and MIT developed the instrument for 
+NASA. In addition to a group of astronomers from the Space Telescope 
+Science Institute, Baltimore, and the University of Virginia, 
+Charlottesville, the team included: Paul Nulsen, University of 
+Wollagong, Australia; Larry David, Harvard-Smithsonian Center for 
+Astrophysics, Cambridge, Mass.; Chris Carilli, National Radio Astronomy 
+Observatory, Socorro, N.M.; and Craig Sarazin, University of Virginia.
+
+NASA's Marshall Space Flight Center in Huntsville, Ala., manages the 
+Chandra program, and TRW, Inc., Redondo Beach, Calif., is the prime 
+contractor for the spacecraft. The Smithsonian's Chandra X-ray Center 
+controls science and flight operations from Cambridge, Mass.
+
+Images associated with this release are available at: 
+
+http://chandra.harvard.edu 
+
+and
+
+http://chandra.nasa.gov
+
+-end-

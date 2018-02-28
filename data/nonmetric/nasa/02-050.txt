@@ -1,0 +1,93 @@
+Dwayne Brown
+Headquarters, Washington              March 13, 2002
+(Phone: 202/358-1726)
+
+Steve Roy
+Marshall Space Flight Center, Huntsville, Ala.
+(Phone: 256/544-0034)
+
+RELEASE: 02-50
+
+SPACE-GREENHOUSE TECHNOLOGY RE-UPS FOR FIGHT AGAINST 
+BIOTERRORISM
+
+     Building miniature greenhouses for experiments on the 
+International Space Station has led to the invention of a 
+device that can destroy Anthrax -- a bacteria that can be 
+deadly when inhaled.
+
+The Anthrax-killing air scrubber, called AiroCideTiO2 
+(titanium dioxide), is a tabletop-size metal box that bolts to 
+office ceilings or walls.  Its fans draw in airborne spores 
+and airflow forces them through a maze of tubes. Inside, 
+hydroxyl radicals attack and kill pathogens. Most remaining 
+spores are destroyed by high-energy ultraviolet photons.
+
+The technology to build the device emerged from another 
+product called Bio-KES, which today is used by grocers and 
+florists to remove ethylene and thus extend the life of 
+vegetables, fruits and flowers. Ethylene is a gas released by 
+the leaves of growing plants -- but too much of it can build 
+up in an enclosed plant-growth chamber or produce storage 
+facility.  
+
+Too much ethylene causes plants to mature too quickly and 
+fruit to ripen prematurely; it even accelerates decay. This 
+hinders researchers' efforts to harvest healthy plants grown 
+in space and would also be undesirable when space travelers 
+build larger space-based greenhouses for growing fresh food.
+
+The research that led to the invention of Bio-KES started with 
+a crucial discovery made in the early 90s by scientists at the 
+Wisconsin Center for Space Automation and Robotics - a NASA 
+Commercial Space Center at the University of Wisconsin-
+Madison. These scientists collaborated on the discovery with 
+Dr. Marc Anderson, a professor and chemist also at the 
+university.
+
+The research team found that ultra-thin layers of titanium 
+dioxide exposed to ultraviolet light converted ethylene into 
+carbon dioxide and water -- substances that are good for 
+plants. Subsequently, they developed a coating technology that 
+applies titanium-dioxide layers to the surfaces of many 
+materials.
+
+The Wisconsin Center for Space Automation and Robotics used 
+the titanium-dioxide coating technology to design an ethylene 
+scrubber. This first-generation ethylene scrubber was used 
+effectively inside a plant-growth unit, which grew potato 
+plants during a space shuttle mission in 1995. Over the years, 
+scientists refined the ethylene scrubber, and currently the 
+third-generation scrubber is being used successfully inside 
+for plant experiments on the International Space Station.  
+
+"Space-based greenhouses may seem to have little to do with 
+the war against terrorism," said Mark Nall, director of the 
+Space Product Development Program at NASA's Marshall Space 
+Flight Center in Huntsville, Ala.  "Yet this invention shows 
+how commercial space research can benefit people on Earth in 
+unexpected ways."   
+
+KES Science and Technology, Kennesaw, Ga., licensed the TiO2 
+coating technology from the University of Wisconsin, which 
+allowed them to develop the Bio-KES ethylene scrubber and the 
+Anthrax-killing scrubber for use on Earth. When the 
+ultraviolet light strikes the titanium-dioxide tubes inside 
+the devices, it creates positive and negative electrical 
+charges. These charges tear apart nearby water molecules and 
+produce hydroxyl radicals. 
+
+"This hydroxyl by-product disrupts organic molecules and is 
+thus deadly to dust mites, Anthrax and many other pathogens," 
+said John Hayman, president of KES Science and Technology, the 
+company that manufactures the devices. "We put higher-powered 
+ultraviolet lamps in the Anthrax-killing device, so more 
+hydroxyl radicals are produced, giving it an extra kick."
+
+More information on space station experiments and science 
+operations is available at:
+
+http://www.scipoc.msfc.nasa.gov/
+http://spaceresearch.nasa.gov
+
+                           -end-

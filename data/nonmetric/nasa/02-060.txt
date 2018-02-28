@@ -1,0 +1,73 @@
+Michael Braukus
+Headquarters, Washington                    March 26, 2002
+(Phone: 202/358-1979)
+
+RELEASE:  02-60
+
+NASA SELECTS INVENTIONS OF THE YEAR
+
+     A miniature pump designed to help your heart beat and a 
+device that insures the safety of the International Space 
+Station and its crew have received NASA's commercial and 
+government invention of the year awards.
+
+Receiving NASA's Commercial Invention of the Year is a 
+miniature ventricular-assist device (VAD). Initially called 
+the NASA/DeBakey heart pump, it is based in part on 
+technology used in Space Shuttle fuel pumps. It is intended 
+as a long-term "bridge" to a heart transplant, or as a more 
+permanent device to help patients toward recovery and a more 
+normal life.
+
+The concept for the pump began with talks between Dr. Michael 
+DeBakey of Houston's Baylor College of Medicine and one of 
+his heart transplant patients, NASA engineer David Saucier. 
+Saucier, who worked at NASA's Johnson Space Center in 
+Houston, knew first-hand the urgency heart-failure patients 
+feel waiting for a donor heart. He also knew Space Shuttle 
+technology. 
+
+Six months after his 1984 heart transplant, Saucier was back 
+at work and arranged for fellow NASA engineers James 
+Akkerman, Bernard Rosenbaum, Gregory Aber and Richard Bozeman 
+to meet with Dr. DeBakey, Dr. George Noon and other Baylor 
+staff. The result was a remarkable battery-operated pump - 
+approximately 3 inches long, 1 inch in diameter and weighing 
+less than four ounces - that seems to be an answer to the 
+decades-long quest to develop an implantable VAD.
+
+NASA, in keeping with its mission of transferring space-based 
+technology to the private sector, granted exclusive rights to 
+MicroMed Technology Inc., Houston, in 1996 after intense 
+competition. In European trials, the MicroMed/DeBakey VAD was 
+implanted in 115 persons without any incidence of device 
+failure. U.S. trials will involve 178 implants of which 21 
+have already been successfully performed.
+
+The NASA Government Invention of the Year goes to a team from 
+the agency's Glenn Research Center in Cleveland. The team 
+invented a hollow cathode assembly that is the primary 
+component of the International Space Station's plasma 
+contactor system. This mission-critical system protects the 
+station and its crew from the dangers associated with 
+electrical charges.
+
+As the space station floats through space in low-Earth orbit, 
+the surface of the structure builds up a static high-voltage 
+charge. The plasma contactor system safely grounds the 
+station from this high voltage protecting it from arcing, 
+which could severely damage its surface. This device is 
+unique in that it reduces the static charge in a self-
+regulating manner to levels safe enough for astronaut 
+spacewalks.
+
+The team of Michael Patterson, Timothy Verhey and George 
+Soulas developed the technology from a laboratory device to 
+flight qualified hardware, and manufactured the space flight 
+hardware for the orbiting research platform. The team's 
+efforts also resulted in increasing hollow cathodes lifetimes 
+from 500 hours to 28,000 hours, enabling their use on ion 
+thrusters, a key technology used for NASA spacecraft missions 
+such as Deep Space 1.
+
+                          -end-

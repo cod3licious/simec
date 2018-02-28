@@ -1,0 +1,104 @@
+David E. Steitz
+Headquarters, Washington           March 7, 2002
+(Phone: 202/358-1730)
+
+Alan Buis
+Jet Propulsion Laboratory, Pasadena, Calif.
+(Phone: 818/354-0474)
+
+RELEASE: 02-46
+
+GRACE SPACE TWINS SET TO TEAM UP 
+TO TRACK EARTH'S WATER AND GRAVITY
+
+     NASA and the German Space Agency are preparing to launch 
+the Gravity Recovery and Climate Experiment (GRACE), a 
+scientific pathfinder mission that will test a novel approach 
+to tracking how water is transported and stored within the 
+Earth's environment. The mission will precisely measure the 
+planet's shifting water masses and map their effects on 
+Earth's gravity field, yielding new information on effects of 
+global climate change.
+
+The twin GRACE satellites are set to launch March 16, 2002, 
+from Russia on a five-year mission that will revolutionize 
+understanding of changes in the Earth's gravity field over 
+time and space. The mission will provide measurements of the 
+gravity field that are far more accurate and sensitive than 
+any that can be obtained by ground-based observations or 
+single remote-sensing spacecraft. 
+
+"GRACE marks the first launch of NASA's Earth System Science 
+Pathfinder program, designed to develop new measurement 
+technologies for studying our Earth system," said Dr. Ghassem 
+Asrar, associate administrator for NASA's Earth Science 
+Enterprise, NASA Headquarters, Washington. "Through NASA's 
+continuing investment in technology development, we've been 
+able to create an innovative mission at a fraction of the 
+cost of missions formulated just a decade ago. GRACE will 
+provide us with a new view of our home planet and help us to 
+better understand climate change and its global impacts such 
+as changes in sea level and the availability of water 
+resources," Asrar said.
+
+A more precise gravity map of Earth is expected to increase 
+the accuracy of many techniques used by scientists who study 
+Earth with space-based instruments. These techniques -- 
+ranging from satellite altimetry and radar interferometry to 
+digital terrain models covering large land and ice areas -- 
+provide critical input to many scientific models used in 
+oceanography, hydrology, glaciology, geology and related 
+disciplines. 
+
+As they race around the globe 16 times a day, the satellites 
+will sense minute variations in the Earth's surface mass 
+below and corresponding variations in the Earth's 
+gravitational pull. Regions of slightly stronger gravity will 
+affect the lead satellite first, pulling it slightly away 
+from the trailing satellite. By measuring the constantly 
+changing distance between the two satellites and combining 
+that data with precise positioning measurements from Global 
+Positioning System instruments, scientists will be able to 
+construct a precise Earth gravity map.  
+
+GRACE is the first Earth-monitoring mission in the history of 
+space flight whose key measurement is not derived from 
+electromagnetic waves bounced off the Earth's surface. 
+Instead, the mission will use a microwave ranging system to 
+accurately measure changes in the speed and distance between 
+two identical spacecraft flying in a polar orbit about 220 
+kilometers (137 miles) apart, 500 kilometers (311 miles) 
+above Earth. The ranging system is so sensitive it can detect 
+separation changes as small as 10 microns -- about one-tenth 
+the width of a human hair over a distance of 220 kilometers.
+
+An additional instrument aboard the satellites called an 
+atmospheric limb sounder will measure the amount by which the 
+Global Positioning System satellite signals are distorted by 
+Earth's atmosphere. Scientists will use these data to improve 
+the accuracy of key atmospheric observations, which serve as 
+input for weather forecast models.
+
+GRACE is a joint partnership between NASA and the German 
+Center for Air and Space Flight (Deutsches Zentrum fur Luft 
+und Rumfahrt, or DLR). The U.S. portion of the project is 
+managed for NASA's Office of Earth Science, Washington, by 
+NASA's Jet Propulsion Laboratory (JPL), Pasadena, Calif. 
+Science data processing, distribution, archiving and product 
+verification are managed under a cooperative arrangement 
+between JPL and the University of Texas' Austin-based Center 
+for Space Research in the United States and Germany's Earth 
+Research Center (or GeoForschungsZentrum).  
+
+More information about the GRACE program is available on the 
+GRACE web site at:
+
+http://www.csr.utexas.edu/grace
+
+Information on NASA's Earth System Science Pathfinder Program 
+may be found at:
+
+http://essp.gsfc.nasa.gov
+
+                         -end-
+

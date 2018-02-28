@@ -1,0 +1,104 @@
+Michael Braukus
+Headquarters, Washington             March 14, 2002
+(Phone: 202/358-1979)
+
+Victoria Kushnir
+Ames Research Center, Moffett Field, Calif.
+(Phone: 650/604-0176)
+
+RELEASE: 02-51
+
+NASA TECHNOLOGY HELPS INDUSTRIAL LEADERS BUILD FACILITIES
+
+     Virtual reality software, originally developed by NASA 
+engineers to help explore Mars, is now being used by a 
+leading petrochemical company to build and plan operations 
+for a complex industrial facility in 'virtual world' 
+simulations.
+
+The Mars Map virtual reality software, developed at NASA Ames 
+Research Center in the heart of California's Silicon Valley, 
+guided scientists through the agency's very successful 1997 
+Mars Pathfinder mission. The tool allows mission scientists 
+and operations personnel to command and control remote 
+robotic spacecraft within a virtual environment. 
+
+Recently, Reality Capture Technologies (RCT), Inc. of San 
+Jose, Calif., was granted a license for further development 
+of the platform. RCT is now deploying this productivity- and 
+life-cycle information-management tool at a new Shell 
+Chemicals process plant currently under construction in 
+Geismar, La.  
+
+"Our product, based on NASA technology, will allow Shell to 
+create and validate start-up procedures, in addition to a 
+construction-feasibility review, and commence training in a 
+virtual environment months before the plant is fully built," 
+said Reality Capture Technologies' Chief Executive Officer 
+Dr. Ted Blackmon. 
+
+RCT's software enables engineers to simulate a plant 
+environment in order to review its 'constructability,' a 
+process of evaluating the design, scheduling, cost and 
+resource planning to assess the possibility of implementing 
+such a design. The software also allows engineers to create 
+operating procedures, training and documentation. Similar to 
+pilot training on flight simulators, this technology enables 
+plant operators to get the training they need in a virtual 
+environment. 
+
+"What makes this software even more unique is how simple it 
+is," said Blackmon.  "It is almost like a video game where 
+you hold a joystick and walk around making sure that 
+everything is working right. Only in this case, you walk 
+around a not-yet-built Shell plant," he added.
+
+By fusing software systems used during the design stage with 
+those used during construction, the software provides virtual 
+access to a construction site and permits project personnel 
+to manage, assess, control and respond more effectively to 
+changes in the plant's complex construction. Like space 
+explorers who use Mars Map to learn how to get around the Red 
+Planet, facility operators can use the new tool to learn how 
+to better 'pilot' the sophisticated and expensive industrial-
+plant asset. 
+ 
+"Operators can now easily access and understand engineering 
+information that is critical to operations, which makes their 
+job much easier and safer," said Blackmon.   
+
+An Ames science team originally developed Mars Map to create 
+a photographic-quality rendering system. Mars Map allowed 
+researchers to better understand the surface of Mars and 
+perform more effective science by providing an accurate 
+visual representation of the planetary terrain. 
+
+"The Mars Pathfinder mission was the first test of this new 
+class of photo-realistic, virtual-reality systems," said Dr. 
+Michael Sims of Ames, who managed the Mars Map development 
+team. "Mars Map made a big difference in our understanding of 
+Mars during Pathfinder, and made us realize that this 
+technology could be an extremely powerful tool for the 
+rendering of the world."
+
+"RCT uniquely addresses the link between various stages of a 
+facility's 'life-cycle,' leveraging information generated 
+during the design stage through construction and subsequently 
+into operations and maintenance," said Blackmon. "By 
+leveraging advanced software, originally developed at NASA 
+for the space program, we are able to effectively 'bridge the 
+islands of automation' that exist in the 
+engineering/construction/operations industry today, and 
+interconnect traditionally stand-alone software systems into 
+an end-to-end distributed computing platform." 
+
+"This company is a resident of the Ames Technology 
+Commercialization Center, a technology incubator located in 
+San Jose," said Phil Herlth of the Ames Commercial Technology 
+Office. "Their commercial partnership with a major chemical 
+company is another example of a successful transfer of a 
+space technology that is now benefiting people here on earth. 
+"
+
+                          -end-
+

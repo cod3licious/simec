@@ -1,0 +1,124 @@
+Dolores Beasley
+Headquarters, Washington             May 9, 2002
+(Phone: 202/358-1753)
+
+Bill Steigerwald
+Goddard Space Flight Center, Greenbelt, Md.
+(Phone: 301/286-5017)
+
+RELEASE 02-84
+
+EARTH'S SPACE-STORM SHIELD OFFERS PROTECTION -- AT A PRICE
+
+     New observations from a NASA spacecraft reveal that a 
+layer in the Earth's outer atmosphere acts like a heat shield 
+by absorbing energy from space storms and reducing their 
+ability to heat the lower atmosphere. However, it imposes a 
+heavy toll for its services by creating a billion-degree 
+cloud of electrified gas, or plasma, that surrounds the 
+planet. 
+
+The plasma cloud is so ferociously hot, its particles act 
+like radiation, occasionally disrupting satellites in mid- to 
+high-altitude orbits. This discovery from NASA's Imager for 
+Magnetopause to Aurora Global Exploration (IMAGE) spacecraft 
+confirms the Earth actively participates in space storms.  
+
+Although past space missions gave provisional evidence for 
+this behavior, IMAGE provides the first global picture of the 
+active role Earth's ionosphere plays in space storms, which 
+is very different from the earlier view that the solar wind 
+itself supplied the energetic particles responsible for these 
+storms. 
+
+The Earth's space-storm shield is a tenuous layer of the 
+outer atmosphere (outer ionosphere) between 180 and 620 miles 
+(300-1,000 kilometers) high that includes electrically 
+charged atoms. "Just as a heat shield sacrifices itself by 
+allowing its outer layers to slough off during the fiery 
+reentry of a spacecraft, Earth's shield absorbs space-storm 
+energy by throwing some of its charged particles into space," 
+said Stephen Fuselier of the Lockheed-Martin Advanced 
+Technology Center, Palo Alto, Calif., lead author of the 
+first of two papers on this discovery to be published in the 
+Journal of Geophysical Research. 
+
+"But this protection comes with a high price, because the 
+expelled particles gain tremendous speed as they leave the 
+atmosphere, become trapped by the Earth's magnetic field and 
+ultimately encircle the Earth, where they form a hot plasma 
+cloud around the planet," said Donald Mitchell of the Johns 
+Hopkins Applied Physics Laboratory, Laurel, Md., lead author 
+of the second paper. Approximately half the energy deposited 
+by space storms in the atmosphere is absorbed this way, 
+according to the researchers.
+
+The solar wind, a thin, high-velocity plasma, blows 
+constantly from the Sun at an average speed of 250 miles per 
+second (400 kilometers/sec). If the Earth had no global 
+magnetic field, or magnetosphere, the solar wind would impact 
+the atmosphere directly and gradually erode it. Instead, the 
+solar wind slams into the Earth's magnetosphere and is 
+diverted around the planet. Buffeting of the magnetosphere is 
+more intense during space storms, when explosive events on 
+the Sun give the solar wind an unusually high velocity or 
+density, or a particularly potent magnetic-field 
+configuration.
+
+Although the magnetosphere does a good job staving off the 
+solar wind, Earth is not home free. Since the solar-wind 
+plasma is comprised of electrically charged particles moving 
+rapidly past the Earth's magnetic field, a multimillion amp 
+electric current is generated, which flows down the Earth's 
+invisible magnetic field lines and pumps up to a trillion 
+watts of power into the magnetosphere -- especially above the 
+polar regions, where the aurora (northern and southern 
+lights) form. Without the space-storm shield, heat from these 
+enormous electric currents would cause Earth's lower 
+atmosphere (lower ionosphere) to expand and increase orbit-
+disrupting drag on spacecraft.
+
+The first IMAGE result shows the Earth's shield in action as 
+it absorbs a space storm's electric current and is ejected 
+into space. Fuselier used the Low Energy Neutral Atom imager 
+instrument on IMAGE to discover electrically charged oxygen 
+atoms are ejected into space immediately in response to the 
+bursts of ionosphere-heating by the massive electric 
+currents. The amount of ionosphere lost during a typical 
+space storm is around a few hundred tons, about equal to the 
+mass of the air in the Louisiana Superdome, according to the 
+team.
+
+The second IMAGE observation shows the price paid for the 
+shield's protection. Because of their electric charge, the 
+expelled oxygen ions feel magnetic forces and are trapped 
+within the Earth's vast magnetosphere, where they follow 
+magnetic field lines like cars on a highway. Scientists know 
+the magnetosphere distorts under the impact of the solar 
+wind, like an umbrella in a windstorm. In particular, the 
+region of the magnetosphere facing away from the Sun is 
+stretched into a long, tail-like shape as the solar wind 
+blows by. Because magnetic fields have tension, they resist 
+stretching and behave like rubber bands. When the stretching 
+becomes too great, the night-side magnetosphere snaps back 
+towards Earth, carrying the ejected ions from the ionosphere 
+with it like an enormous slingshot. 
+
+Mitchell used the High Energy Neutral Atom imager instrument 
+on IMAGE to observe that these ions, now accelerated to 
+enormous velocities (about 2,500 miles per second or 4,000 
+km/sec), appear immediately in the aurora and in the cloud of 
+hot plasma that encircles the Earth during space storms. 
+Earth contributes material and the solar wind supplies the 
+energy that transforms this cool atmospheric material into a 
+dangerously hot plasma cloud. If it were not for the Earth's 
+own ionosphere supplying material, the hot plasma cloud would 
+be very much diminished. 
+
+This new view is helping scientists to better understand the 
+effects of space storms which create moving plasma clouds 
+that interfere with navigation using Global Positioning 
+System satellites. Images and more information are available 
+at:
+http://www.gsfc.nasa.gov/topstory/20020509imagessu.html
+                        -end-

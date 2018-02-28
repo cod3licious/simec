@@ -1,0 +1,100 @@
+David E. Steitz
+Headquarters, Washington                 Jan. 18, 2002
+(Phone: 202/358-1730)
+
+RELEASE: 02-12
+
+TECHNOLOGY MISSION ACCOMPLISHED, NASA GOES FOR MORE
+
+     The mission was to validate nine new breakthrough 
+technologies in the unique environment of space -- 
+technologies that will change the way spacecraft and Earth-
+viewing instruments are built and operated in the future. 
+After a fully successful series of experiments and tests, 
+NASA's going for more.
+
+The Earth Observing-1 technology-testbed spacecraft was 
+launched just over a year ago to see how a set of advanced 
+technologies would fare in the actual space environment -- 
+the final step in validating these new concepts. The 
+instruments -- ranging from a hyperspectral imager (a 
+"camera" that views the Earth's surface with spectral 
+discrimination never before seen) to an X-Band Phased Array 
+Antenna that sends high volumes of data back to Earth in a 
+unique "pencil beam" pattern -- all met test objectives with 
+"flying colors." 
+
+A pulsed plasma thruster was tested as a new way of 
+controlling spacecraft attitude and "pointability," and an 
+Advanced Land Imager validated a new low-cost way of 
+providing Landsat-type or better views of Earth from space 
+with more desirable size, mass and power and improved 
+performance. 
+
+Breakthroughs in carbon composite-structure technologies to 
+keep spacecraft lightweight and cool, and an advanced, 
+wideband recorder processor were tested and found fit for use 
+in future flights. A new lightweight, flexible solar array 
+also proved a success.
+
+Now that the mission has met all objectives within the one-
+year on-orbit goal, mission scientists and the user community 
+want to keep things going. To accommodate user needs, NASA 
+has formed a partnership with the United States Geological 
+Survey (USGS) in Reston, Va., to continue the mission through 
+the acquisition and provision of mission data based on user 
+requests.
+
+The EO-1 Extended Mission partnership is modeled on the 
+successful NASA/USGS Landsat data-purchase model, and 
+parallels NASA's policy of charging for use of unique NASA 
+capabilities. EO-1 is one-of-a-kind and no equivalent 
+commercial source exists; the private sector is part of the 
+user community that has requested continuing mission 
+operations.
+
+Under the extended mission agreement, NASA will continue to 
+command and control EO-1, while USGS will take researchers' 
+cost-reimbursable orders for spacecraft data. EO-1 price 
+levels have been set to recover satellite operation, data 
+processing and customer interface costs, estimated at 
+approximately $5 million per year.
+
+NASA and USGS believe that data from EO-1 may be valuable in 
+global land-cover studies, ecosystem monitoring, mineral and 
+petroleum prospecting, and agricultural crop discrimination 
+and assessment, among other potential applications. The 
+extended mission will allow a broad range of users to 
+experiment and learn from these advanced capabilities. It 
+also provides an ideal mechanism for technology transfer to 
+the private sector.
+
+Potential customers for these data include the existing 31 
+science teams who have been supporting the mission. The 
+satellite-manufacturing industry; the value-added commercial 
+remote-sensing community; the Earth Sciences research 
+community; and federal, state and local agencies, as well as 
+a variety of national security organizations, all may find 
+potential use for the new, experimental data unique to EO-1. 
+
+NASA and USGS will review EO-1 operations on a monthly basis. 
+Depending on the demand for EO-1-unique observations and 
+spacecraft health, satellite decommissioning could occur as 
+early as this spring or as late as the spring of 2005.
+
+The EO-1 mission is part of the advanced technologies 
+research conducted by NASA's Earth Science Enterprise, a 
+long-term research effort dedicated to understanding how 
+human-induced and natural changes affect our global 
+environment.
+
+Data inquiries and orders from USGS can be handled online at:
+
+http://eo1.usgs.gov
+
+A description of the EO-1 satellite and sensors is available 
+at:
+
+http://eo1.gsfc.nasa.gov 
+
+                             -end-

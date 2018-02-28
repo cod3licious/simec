@@ -1,0 +1,112 @@
+Donald Savage/Dolores Beasley
+Headquarters, Washington              March 6, 2002 
+(Phone: 202/358-1547)
+
+Nancy Neal/Mark Hess
+Goddard Space Flight Center, Greenbelt, Md.
+(Phone: 301/286-8955)
+
+Michael Purdy
+The Johns Hopkins University, Baltimore
+(Phone: 410/516-7160)
+
+RELEASE: 02-45
+
+NASA'S FUSE SATELLITE LIT AGAIN
+
+     Like spacewalking astronauts performing open-heart 
+surgery on NASA's Hubble Space Telescope this week, an 
+ingenious team of engineers re-awakened another orbiting 
+observatory earlier this month -- without ever leaving the 
+ground.
+
+NASA's Far Ultraviolet Spectroscopic Explorer (FUSE) 
+spacecraft, which some had given up for dead in December 
+after critical guidance components failed, was returned to 
+full operations when the team developed an innovative new 
+guidance system. The system uses a complex new set of 
+procedures that lets controllers use electromagnets in the 
+satellite to push and pull on the Earth's magnetic field. 
+Experts had speculated about such an approach as a fallback 
+for failing satellite guidance systems, but it had never been 
+employed to steer a satellite with the exacting accuracy 
+needed for scientific observations. 
+ 
+"When FUSE lost two reaction wheels, I would have bet good 
+money that it was end of life for the mission," said Dr. Paul 
+Hertz, FUSE Program Executive at NASA Headquarters in 
+Washington. "I am thrilled that the FUSE team pulled off a 
+miracle and proved me wrong."
+	
+The guidance system problems involved FUSE's reaction wheels. 
+FUSE is equipped with four reaction wheels -- three primary 
+and a backup. Controllers use reaction wheels to steady and 
+point the satellite, but to work the wheels must be spinning. 
+One reaction wheel in FUSE stopped spinning in November, and 
+a second stopped in December, leaving FUSE with only two 
+working reaction wheels. This automatically put the satellite 
+into a pre-programmed "safe mode" configuration on December 
+10, 2001.
+
+Scientists and engineers at The Johns Hopkins University, 
+Baltimore; NASA's Goddard Space Flight Center, Greenbelt, 
+Md.; Orbital Sciences Corporation, Dulles, Va.; and Honeywell 
+Technology Solutions, Inc., Morristown, N.J., worked for 
+several weeks to develop a solution. FUSE is operated for 
+NASA by Hopkins.
+
+To make up for the missing reaction wheels, scientists and 
+engineers developed new sets of procedures and software that 
+let them use equipment known as magnetic torquer bars in a 
+new way. Controllers can generate local magnetic fields by 
+running electric current through FUSE's three torquer bars, 
+and can flip the polarity of these fields by changing the 
+direction of current flow. 
+
+"By actively changing the electricity flow to the torquer 
+bars with revised software, we can use the Earth's magnetic 
+field to help point the satellite," explained Bill Blair, 
+chief of observatory operations at Hopkins. "The 'control' 
+aspects come from the interplay between these locally 
+generated magnetic fields and the magnetic field of the 
+Earth." 
+
+Jeff Kruk, deputy chief of observatory operations at Hopkins, 
+remembered the key moment when scientists and engineers 
+turned on the new guidance systems. "We could scarcely 
+believe our eyes when sub-arcsecond pointing stability was 
+achieved within seconds of enabling the new software. The 
+performance was even better than we had hoped. We knew then 
+and there that FUSE was back in business." 
+
+Engineers have demonstrated pointing capability to less than 
+1/4000th of a degree, which allows the team to lock on to 
+guide stars and point FUSE steadily to make science 
+observations. The team is still fine-tuning the new guidance 
+systems.
+
+FUSE was launched on June 24, 1999, on a three-year primary 
+science mission to probe several fundamental aspects of the 
+universe, including the conditions shortly after the Big 
+Bang, the creation and dispersal of chemical elements, and 
+the properties of gas clouds that form stars and planetary 
+systems. NASA has since recommended an additional two-year 
+extension beyond the prime mission. FUSE's international 
+partners are the Canadian Space Agency (CSA) and the French 
+Centre National d'Etudes Spatiales (CNES).
+
+"I am very excited to have FUSE back," said George Sonneborn, 
+FUSE project scientist at Goddard. "This remarkable recovery 
+will enable NASA to complete the remaining year of the FUSE 
+prime mission, and perhaps two additional years of science."
+
+ "FUSE was in its prime when the anomaly happened," said 
+Professor Warren Moos, FUSE principal investigator at 
+Hopkins, "and so much remains to be done. We are proud of the 
+superb teamwork that has gotten us back to doing science, and 
+we look forward to more years of exciting discoveries from 
+the new FUSE."
+
+Additional information is on the Internet at: 
+http://fusewww.gsfc.nasa.gov/fuse/
+                             - end -

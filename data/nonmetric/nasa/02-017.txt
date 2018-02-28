@@ -1,0 +1,91 @@
+Dolores Beasley
+Headquarters, Washington                    Jan. 29, 2002
+(Phone: 202-358-1727)
+
+Susan Hendrix
+Goddard Space Flight Center, Greenbelt, Md.
+(Phone: 301-286-7745)
+
+RELEASE NO: 02-17
+
+NEW LAUNCH DATE SET FOR HESSI SPACECRAFT
+
+     NASA's High Energy Solar Spectroscopic Imager (HESSI) 
+remains on track for a Feb. 5 launch. HESSI will study solar 
+flares - gigantic explosions in the atmosphere of the Sun- 
+with a unique kind of X-ray vision, producing the very first 
+high-fidelity color movies of solar flares during their 
+highest energy emissions. 
+
+HESSI will be carried aloft inside a Pegasus XL rocket under 
+the belly of Orbital Science Corporation's Stargazer L-1011 
+aircraft. The L-1011 is scheduled to lift off from Cape 
+Canaveral Air Force Station, Fla., at 3:21 p.m. EST. After the 
+aircraft is about 40,000 feet over the Atlantic Ocean, it will 
+drop the Pegasus rocket. Following a free fall and a series of 
+short rocket motor burns, the rocket will deliver HESSI to its 
+373-mile (600-kilometer) circular orbit above the Earth, 
+inclined at 38 degrees to the equator.
+
+In order to understand what triggers a solar flare and how it 
+explosively releases energy, scientists need to identify the 
+kinds of particles being accelerated, locate the regions where 
+the acceleration occurs, and determine when the particles get 
+accelerated. The most direct tracer of these accelerated 
+particles is the X-ray and gamma ray radiation they produce as 
+they travel through the solar atmosphere. 
+
+The spacecraft's sole instrument, an imaging spectrometer, 
+will construct flare images from patterns of light and 
+shadows, that are produced by high-energy radiation as it 
+passes through the instrument's grids while the spacecraft 
+rotates.
+
+Inside solar flare explosions, magnetic fields twist, snap and 
+recombine, blasting particles to almost the speed of light and 
+firing solar gas to tens of millions of degrees. This intense 
+action causes the solar atmosphere to sizzle with high-energy 
+X-rays and gamma rays and drives proton and electron particles 
+into the solar system. Radiation and particles from solar 
+flares can sometimes affect orbiting spacecraft. 
+
+HESSI was originally scheduled for launch in July 2000, but 
+was postponed after the satellite suffered damage during 
+vibration testing. Since then, flight delays due to launch 
+vehicle failures have affected the launch date. However, 
+officials have since cleared the way for next Tuesday's 
+scheduled launch.
+
+In order for scientists to understand the physical processes 
+and conditions within flares, they will use the spectrometer 
+aboard HESSI to create images of the gamma rays and highest 
+energy X-rays emitted by each flare. These images will be the 
+first to simultaneously measure the location and energy 
+content of radiation from the flare material and should 
+improve predictability of flare occurrences at the Sun and the 
+subsequent consequences we experience here on Earth. 
+
+Working together with several other solar spacecraft such as 
+the Solar and Heliospheric Observatory (SOHO), Geostationary 
+Operational Environmental Satellites (GOES), and Transition 
+Region and Coronal Explorer (TRACE) for flare radiation, as 
+well as Wind, Advanced Composition Explorer (ACE), Ulysses, 
+and Voyager for particle detection, HESSI will provide 
+scientists with vital insight into the impulsive energy 
+release and particle acceleration processes at the Sun.  
+
+The HESSI mission costs about $85 million, which includes the 
+spacecraft, launch vehicle, mission operations and data 
+analysis. The Explorers Program Office at NASA Goddard Space 
+Flight Center, Greenbelt, Md., will provide mission management 
+and technical oversight under the auspices of NASA's Office of 
+Space Science in Washington. 
+
+For detailed information about HESSI and its science mission, 
+go to: 
+
+http://hesperia.gsfc.nasa.gov/hessi
+
+http://hessi.ssl.berkeley.edu/
+
+                             -end-

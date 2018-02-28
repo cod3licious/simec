@@ -1,0 +1,14 @@
+.DS_Store
+*~
+*.sw[p|o]
+*.py[c|o]
+*.py~
+*.csv
+*.db
+examples/data/
+examples/.ipynb_checkpoints/
+dist/
+build/
+simec.egg-info/
+MANIFEST.in
+setup.py

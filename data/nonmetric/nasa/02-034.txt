@@ -1,0 +1,91 @@
+Dolores Beasley
+Headquarters, Washington               Feb. 27, 2002
+(Phone: 202/358-1753)
+
+Steve Roy
+Marshall Space Flight Center, Huntsville, Ala.
+(Phone: 256/544-6535) 
+
+Megan Watzke
+Chandra X-ray Observatory Center, Cambridge, Mass.
+(Phone: 617/496-7998)
+
+RELEASE: 02-34
+
+JUPITER HOT SPOT MAKES TROUBLE FOR THEORY
+
+     A pulsating hot spot of X-rays has been discovered in the 
+polar regions of Jupiter's upper atmosphere by NASA's Chandra 
+X-ray Observatory. Previous theories cannot explain either the 
+pulsations or the location of the hot spot, prompting 
+scientists to search for a new process to produce Jupiter's X-
+rays.
+
+"The location of the X-ray hot spot effectively retires the 
+existing explanation for Jupiter's 
+X-ray emission, leaving us very unsure of its origin," said 
+Randy Gladstone of the Southwest Research Institute in San 
+Antonio and lead author of a paper on the results in the Feb. 
+28, 2002, issue of the journal Nature. "The source of ions 
+that produce the X-rays must be a lot farther away from 
+Jupiter than previously believed."
+
+Chandra observed Jupiter for 10 hours on Dec. 18, 2000, when 
+NASA's Cassini spacecraft was flying by Jupiter on its way to 
+Saturn. The X-ray observations revealed that most of the 
+auroral X-rays come from a pulsating hot spot that appears at 
+a fixed location near the north magnetic pole of Jupiter.
+
+Bright infrared and ultraviolet emissions have also been 
+detected from this region in the past. The X-rays were 
+observed to pulsate with a period of 45 minutes, similar to 
+the period of high-latitude radio pulsations detected by 
+NASA's Galileo and Cassini spacecraft.
+
+An aurora of X-ray light near Jupiter's polar regions had been 
+detected by previous satellites. However, scientists were 
+unable to determine the exact location of the X-rays. The 
+accepted theory holds that the X-rays are produced by 
+energetic oxygen and sulfur ions that became excited as they 
+ran into hydrogen and helium in Jupiter's atmosphere. Oxygen 
+and sulfur ions (originally from Jupiter's moon Io) are 
+energized while circulating around Jupiter's enormous 
+magnetosphere. And some -- the purported X-ray producers -- 
+get dumped into Jupiter's atmosphere when they return to the 
+region of Io's orbit.
+
+Chandra's ability to accurately determine the location of the 
+X-rays proved this model incorrect, as ions from regions of 
+Jupiter's magnetic field near Io cannot reach the high Jovian 
+latitudes where most of the X-rays were observed.
+
+This result has its own problems. At the large distances 
+required for the source of the ions --at least 30 times the 
+radius of Jupiter -- spacecraft measurements have shown that 
+there are not nearly enough energetic oxygen and sulfur ions 
+to account for the observed X-ray emission.
+
+One possibility is that heavy ions among the particles flowing 
+out from the Sun as the solar wind are captured in the outer 
+regions of Jupiter's magnetic field, then accelerated and 
+directed toward its magnetic pole. Once captured, the ions 
+would bounce back and forth in the magnetic field from pole to 
+pole in an oscillating motion that might explain the 
+pulsations.
+
+The High Resolution Camera used for the Chandra observations 
+was built by the Smithsonian Astrophysical Observatory in 
+Cambridge, Mass. NASA's Marshall Space Flight Center in 
+Huntsville, Ala., manages the Chandra program, and TRW, Inc., 
+Redondo Beach, Calif., is the prime contractor. The 
+Smithsonian's Chandra X-ray Center controls science and flight 
+operations from Cambridge, Mass.
+
+Images and additional information about this result are 
+available at:
+
+http://chandra.harvard.edu
+and
+http://chandra.nasa.gov
+
+                          -end-

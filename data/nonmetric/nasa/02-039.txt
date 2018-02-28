@@ -1,0 +1,93 @@
+Dwayne Brown
+Headquarters, Washington                                   March 1, 2002 
+(Phone: 202/358-1726) 
+
+Kelly Humphries 
+Johnson Space Center, Houston 
+(Phone: 281/483-5111) 
+
+RELEASE: 02-39
+
+COMPUTER SOFTWARE UPGRADE SETS 
+STAGE FOR SPACE STATION EXPANSION 
+
+ The International Space Station is ready for assembly of its next major 
+components -- a football field-sized structural backbone supporting 
+power, cooling and mobile robotics systems -- now that a new generation 
+of computer software is "booted up" and on the job. 
+ 
+The product of years of planning, months of testing and the transfer of 
+about 2,500 files to and within the station, the new software is in use 
+aboard the orbiting laboratory today following a carefully coordinated 
+12-hour process that was finished last Friday. 
+
+The software prepares the space station for its new configuration with 
+its main truss, which will support the station's solar arrays, 
+radiators, mobile base system for the robotic arm and other equipment. 
+The first element of the truss, the S0 (or S-zero), is to be launched 
+aboard Atlantis on STS-110 in April. The successful software upgrade had 
+to be completed before Atlantis could be launched. 
+
+One of the major new capabilities the new software provides allows 
+activation of equipment on the S0 truss that will use Global Positioning 
+System (GPS) data in the station's attitude control system. The new GPS 
+capability will provide the primary guidance, navigation and control 
+system of the station, transitioning Russian attitude-determination 
+systems to a backup role. 
+
+"This software upgrade fits in well with what has been a very productive 
+Expedition," said Sally Davis, lead flight director for this stage of 
+station operations. "We have demonstrated our ability to add major new 
+capabilities to hardware and software, while we keep the International 
+Space Station fully operational." 
+
+"The upload involved software for five American and Canadian computer 
+systems and affects their companion Russian systems," said Robert C. 
+Dempsey, one of the International Space Station flight controllers at 
+NASA's Johnson Space Center in Houston, who has been working for months 
+to choreograph the new software installation and activation. Some 150 
+people in the United States, Russia and Canada participated in the 
+software upload, from planning and testing to Friday's initialization. 
+Just the procedures for the initialization of the computers with the new 
+software were 106 pages long. 
+
+The technical name for the software package is the 8A Integrated Flight 
+Load, named for the space station assembly-sequence flight for which 
+it's required. 
+
+Friday's process was similar to restarting a personal computer network, 
+including its servers and workstations, after a major operating system 
+upgrade. However, it was vastly more complicated, and had to be 
+carefully coordinated among the computers on board, including those in 
+the station's Russian-built modules. Each of the system computers had to 
+be loaded with the latest software and brought back on line one-by-one 
+so that at least two computers in each system were available to support 
+day-to-day operations while the other was initializing its new software. 
+
+ The work had to be done while Expedition Four Commander Yury 
+Onunfrienko and Flight Engineers Dan Bursch and Carl Walz were awake, 
+because the station crew had to install new hard drives -- sent up on a 
+previous shuttle flight -- into their laptop computers and follow along 
+as the software was initialized. The software upload also was expected 
+to trigger caution and warning alarms, which would have awakened a 
+sleeping crew. In addition, some of the work had to be done over Russian 
+ground stations, as computers in Mission Control Moscow introduced their 
+computers to the new U.S. software. 
+
+The process had to be completed expeditiously because of the possibility 
+of glitches in computers with the new software trying to work with 
+others still using the old software. 
+
+"It's been a heck of a lot of work," Dempsey said, of his full-time job 
+for about nine months. "It's probably the most challenging thing I've 
+done in my career." He likened the process to a climber finally reaching 
+the top of a difficult mountain. "I've really enjoyed it." 
+
+The next major software upgrade will not take place until April 2003 in 
+preparation for 
+STS-115. That mission will deliver the second truss segment for the port 
+side of the station and the second set of large U.S. solar arrays, 
+doubling the power generating capacity of the station. 
+
+-end-
+

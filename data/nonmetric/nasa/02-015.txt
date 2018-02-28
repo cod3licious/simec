@@ -1,0 +1,100 @@
+David E. Steitz
+Headquarters, Washington               Jan. 22, 2002
+(Phone: 202/358-1730)
+
+Alan Buis
+Jet Propulsion Laboratory, Pasadena, Calif.
+(Phone: 818/354-0474)
+
+Eric Berryman
+National Imaging and Mapping Agency (NIMA), Bethesda, Md.
+(Phone: 301/227-3132)
+
+RELEASE: 02-15
+
+PICTURES FROM THE REAL EDGE: NASA POSTS U.S. TOPOGRAPHY DATA
+
+     Displaying spectacular new 3-D images and animations of 
+California from space, scientists at NASA's Jet Propulsion 
+Laboratory (JPL), Pasadena, Calif., today announced the release 
+of high-resolution topographic data of the continental United 
+States gathered during the February 2000 Shuttle Radar 
+Topography Mission (SRTM) -- a mission that is creating the 
+world's best topographic map. 
+
+"The release of the California mosaic and continental-U.S. SRTM 
+data is a tantalizing preview of things to come from this 
+program," said Michael Kobrick, JPL SRTM project scientist. "We 
+are processing data for the rest of the world on a continent-
+by-continent basis, mapping and exploring many relatively 
+unknown regions where our maps will be far more precise than 
+the best global maps in use today."
+
+Yunjin Kim, JPL SRTM project manager, said users in the U.S. 
+and elsewhere would find wide applications for the data. "The 
+maps produced from the mission will be among the most valuable, 
+universally beneficial data ever produced by a science mission. 
+National and local government organizations, scientists, 
+commercial enterprises and civilians alike will find the data 
+useful for applications as diverse as earthquake studies, flood 
+control, transportation and urban planning, enhanced ground-
+collision warning systems for aircraft and better placement of 
+cell phone towers," he explained.
+
+With today's release, gigabytes of digital elevation-model 
+data, sampled at an interval of one measurement every 30 meters 
+(98 feet), are now available to selected science investigators, 
+with 90-meter (295-foot) sample imagery available to the 
+general public. Processing and distribution of validated U.S. 
+digital topographic data will continue on a regular basis, with 
+completion expected this spring. 
+
+When completed in fall 2002, more than 12 terabytes of data 
+encompassing nearly 1 trillion measurements will have been 
+processed, representing 80 percent of Earth's land mass between 
+60 degrees north and 56 degrees south of the equator. The areas 
+mapped are home to approximately 95 percent of the world's 
+population. 
+
+Thomas A. Hennig, National Imaging and Mapping Agency's (NIMA) 
+program manager for SRTM said, "SRTM literally captured a 
+snapshot of the Earth's surface at the beginning of the 21st 
+century that will be of tremendous value for years to come. The 
+SRTM data will provide NIMA's customers a revolutionary leap 
+forward in imaging information." NIMA partnered with NASA, 
+Germany and Italy in sponsorship of the SRTM flight.
+
+The centerpiece of today's release is the California mosaic, a 
+color-shaded relief elevation map. The image depicts California 
+at a data-sample interval of 3 arc-seconds (approximately 90 
+meters or 295 feet). The map depicts changes in height as 
+colors, with blues and greens at the lower elevations, rising 
+through yellows and browns to white at the highest elevations. 
+
+The California mosaic image and animations are available at:
+http://www.jpl.nasa.gov/srtm/
+
+As processing of each continent is finished, data will be sent 
+to NIMA for final quality checking and copies sent to the 
+United States Geological Survey's EROS Data Center, Sioux 
+Falls, S.D., for final archiving and distribution. 
+
+The SRTM was flown aboard Space Shuttle Endeavour Feb. 11-22, 
+2000. It used modified versions of the same instruments that 
+comprised the Space Shuttle Imaging Radar-C/X-Band Synthetic 
+Aperture Radar that flew twice on Endeavour in 1994. 
+
+The mission collected 3-D measurements of Earth's land surface 
+using radar interferometry, which compares two radar images 
+taken at slightly different locations to obtain elevation or 
+surface-change information. To collect the data, engineers 
+added a 60-meter (197-foot) mast, installed additional C-band 
+and X-band antennas, and improved tracking and navigation 
+devices. 
+
+The SRTM mission supports NASA's Earth Science Enterprise, 
+Washington, a long-term research and technology program 
+designed to examine Earth's land, oceans, atmosphere, ice and 
+life as a total integrated system. 
+
+                         -end-

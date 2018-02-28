@@ -1,0 +1,114 @@
+Michael Braukus
+Headquarters, Washington              March 11, 2002
+(Phone: 202/358-1979)
+
+Fred Johnsen
+Dryden Flight Research Center, Edwards, Calif.
+(Phone: 661/276-2998)
+
+RELEASE: 02-47
+
+NEW MEXICO EXPERIMENTS AID AIRSPACE SAFETY
+
+     An alliance of teams from NASA, the U.S. Navy, New 
+Mexico State University in Las Cruces and industry converges 
+on Las Cruces, N.M., this week to demonstrate how remotely 
+piloted aircraft can operate safely in the National Airspace 
+System (NAS). Critical to gaining access to the skies is the 
+requirement for remotely flown airplanes to be able to detect 
+and avoid collision courses with other aircraft.
+
+Using three detection systems, the teams working as part of 
+NASA's Environmental Research Aircraft and Sensor Technology 
+(ERAST) program will fly up to three aircraft, including a 
+high-speed NASA F-18 jet, on simulated collision courses. 
+Meanwhile onboard technology will automatically detect the 
+threat and propose a flight path to keep the aircraft out of 
+danger. While all the aircraft in the tests this week will 
+have pilots onboard, the instrumented test airplane will use 
+equipment intended to permit future uninhabited aircraft to 
+avoid other airplanes in flight. This new sensor technology 
+may also benefit commercial airliner safety. 
+
+Central to the tests is the unorthodox Proteus aircraft built 
+by Scaled Composites in Mojave, Calif. Proteus will carry 
+see-and-avoid electronic devices that will detect incoming 
+airplanes.
+
+Aircraft manufacturers are devising a variety of unpiloted 
+aircraft capable of performing long-duration missions. Low-
+cost UAVs can be used to monitor wildfires, study 
+environmental phenomena, relay cellular phone service, and 
+keep an eye on petroleum pipelines and remote borders. But 
+before these uninhabited aerial vehicles (UAVs) can fly 
+routinely in the
+national airspace along with traditional airplanes with 
+pilots onboard, technologies must be validated to enable UAVs 
+to mingle safely in the skies.
+
+"The ERAST alliance has the opportunity to significantly 
+increase the utility of remotely piloted aircraft by 
+developing systems that enable UAVs to detect and avoid other 
+aircraft," said NASA ERAST program manager Jeff Bauer of 
+Dryden Flight Research Center, Edwards, Calif. 
+
+"The Federal Aviation Administration (FAA) must certify 
+remotely piloted aircraft before they will be allowed to fly 
+in the national airspace," Bauer explained. "Our allied 
+efforts can help open the door to airspace use by UAVs. We 
+can recommend certification and regulatory procedures to the 
+FAA based on actual flight verification of remotely piloted 
+aircraft safety systems."
+
+The goals of this week's flights over southwestern New Mexico 
+are to demonstrate see-and-avoid equipment capabilities, and 
+to show how a remotely piloted aircraft can be in constant 
+communication with its ground pilot, even at distances over 
+the horizon, by relaying signals via satellites.
+
+The flight tests mobilize the resources of Dryden and ERAST 
+partners, including the New Mexico State University Technical 
+Analysis and Applications Center (TAAC) in Las Cruces, Scaled 
+Composites, the Navy, and Modern Technology Solutions, Inc. 
+(MTSI) of Alexandria, Va. FAA observers plan to witness the 
+operations at Las Cruces.
+
+For the tests, Proteus has been fitted with a Skywatch HP 
+traffic advisory system, a radio-based device for detecting 
+other aircraft. Additionally, Proteus carries two "non-
+cooperative" sensors -- devices that don't require signals or 
+transmissions from any other source -- to detect the presence 
+and course of other aircraft. These sensors are an 
+Engineering 2000 infrared sensor and an Amphitech radar, both 
+mounted in the nose of Proteus.
+
+Bauer says success over Las Cruces will be measured by the 
+effectiveness of the "cooperative" Skywatch system to alert 
+Proteus' ground controller of flight path conflicts to enable 
+the controller to alter Proteus' flight out of harm's way. 
+
+Flight scenarios include having aircraft approach Proteus 
+from a variety of angles and airspeeds. For safety, the 
+aircraft will maintain an actual vertical or lateral 
+separation during the approaches; the detection equipment can 
+be calibrated to perceive this as a simulated threat at the 
+same place as Proteus will fly. 
+
+Limited numbers of reporters will be able to observe control 
+room activity and the last Proteus test flight Thursday, 
+March 14, at the Las Cruces International Airport.
+
+On Friday, March 15, Proteus will make local demonstration 
+flights for middle school and high school students attending 
+an educational program about the ERAST tests. At 11:30 a.m. 
+Mountain time at the airport, program managers will brief 
+reporters.
+
+                             -end-
+
+NOTE TO EDITORS: Media representatives should contact Sherri 
+Clark, New Mexico State University TAAC, at 505/646-5033 for 
+more information on coverage opportunities at Las Cruces 
+International Airport. 
+
+

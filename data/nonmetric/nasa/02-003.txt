@@ -1,0 +1,105 @@
+Dolores Beasley
+Headquarters, Washington                      Jan. 9, 2002
+(Phone: 202/358-1753)
+
+Steve Roy
+Marshall Space Flight Center, Huntsville, Ala.
+(Phone: 256/544-6535)
+
+Megan Watzke
+Chandra X-ray Observatory Center, Cambridge, Mass.
+(Phone: 617/496-7998)
+
+RELEASE: 02-03
+
+CHANDRA TAKES IN BRIGHT LIGHTS, BIG CITY OF MILKY WAY
+
+     NASA's Chandra X-ray Observatory has made a stunning, 
+high-energy panorama of the central regions of our Milky Way 
+galaxy. The findings are an important step toward 
+understanding the most active area of the Milky Way as well 
+as other galaxies throughout the universe.
+
+Like a sprawling megalopolis, the new Chandra images show 
+hundreds of white dwarf stars, neutron stars and black holes 
+bathed in an incandescent fog of multimillion-degree gas 
+around a supermassive black hole. 
+
+"The center of the galaxy is where the action is," said Q. 
+Daniel Wang of the University of Massachusetts, Amherst. 
+"With these images, we get a new perspective of the interplay 
+between stars, gas and dust, as well as the magnetic fields 
+and gravity in the region. We can see how such forces affect 
+the immediate vicinity and may influence other aspects of the 
+galaxy." 
+
+Wang presented the montage of 30 separate Chandra images 
+today at the American Astronomical Society meeting in 
+Washington, and in a paper published in the Jan. 10, 2002, 
+issue of the journal Nature. The images, made with the 
+Advanced CCD Imaging Spectrometer (ACIS) July 16-21, 2001, 
+covered a 400- by 900-light-year swath of the center of the 
+galaxy. 
+
+One immediate result was that the team could separate out the 
+individual X-ray sources from the diffuse glow produced by 
+hot gas. "We can now see that the sources are responsible for 
+most of the X-rays from highly ionized iron previously 
+attributed to the diffuse glow," said Eric Gotthelf, of 
+Columbia University in New York, a co-author. "So we must now 
+revise our notion of the hot gas, which appears to be about 
+10 times cooler than previously thought. It's only a 
+relatively mild 10 million degrees!" 
+
+The diffuse X-ray emission seems to be related to the turmoil 
+and density of matter in the inner Milky Way. Stars are 
+forming there at a much more rapid rate than in the galactic 
+"suburbs." Many of the most massive stars in the galaxy are 
+located in the galactic center and are furiously boiling off 
+their outer layers in searing stellar winds. Supernova 
+explosions are far more common in the region and send shock 
+waves booming through the inner galaxy. 
+
+And then there is the three-million-solar-mass black hole at 
+the epicenter. Although Chandra recently observed a small 
+flare from the vicinity of the central supermassive black 
+hole, the power output near the black hole remains relatively 
+low. 
+
+However, an unexplained fluorescence of iron atoms, observed 
+by the team to be associated with molecular clouds a few 
+hundred light-years away, may indicate that the supermassive 
+black hole was hundreds of times brighter in the past. 
+Alternatively, the fluorescence could be due to high-energy 
+particles called cosmic rays produced by supernovae or bygone 
+eruptions from the supermassive black hole. 
+
+"The galactic center is dominated by very high pressures due 
+to the hot gas component and the strong magnetic fields," 
+said Cordelia Lang, also of the University of Massachusetts, 
+and a co-author. "It's a nice place to visit with a telescope 
+but I wouldn't want to live there."
+
+The Chandra map shows that the high-pressure and high-
+temperature gas is apparently escaping from the center into 
+the halo of the galaxy. "A galaxy is a sort of ecosystem, and 
+the activity in the center can seriously affect the evolution 
+of the galaxy as a whole," said Wang. "Astronomically, the 
+center of the Milky Way is really in our backyard, and, 
+therefore, provides an excellent laboratory to learn about 
+the cores of other galaxies."
+
+The ACIS instrument was developed for NASA by Pennsylvania 
+State University, University Park, and Massachusetts 
+Institute of Technology, Cambridge. NASA's Marshall Space 
+Flight Center in Huntsville, Ala., manages the Chandra 
+program, and TRW, Inc., Redondo Beach, Calif., is the prime 
+contractor. The Smithsonian's Chandra X-ray Center controls 
+science and flight operations from Cambridge, Mass.
+
+More information on Chandra and images associated with this 
+release are available at: 
+http://chandra.harvard.edu
+and
+http://chandra.nasa.gov
+                               -end-
