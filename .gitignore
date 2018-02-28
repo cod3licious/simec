@@ -5,8 +5,8 @@
 *.py~
 *.csv
 *.db
-examples/data/
-examples/.ipynb_checkpoints/
+data/
+.ipynb_checkpoints/
 dist/
 build/
 simec.egg-info/
