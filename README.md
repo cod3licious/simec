@@ -11,7 +11,7 @@ This code is still work in progress and intended for research purposes. It was p
 
 ### Getting your hands dirty
 
-First check out the Jupyter notebook `basic_examples_simec_with_keras.ipynb`, to get an idea of how Similarity Encoders can be implemented with keras. Then have a look at `basic_examples_compact.ipynb`, which uses the `SimilarityEncoder` class from `simec.py` to setup the basic SimEc model with less lines of code.
+First check out the Jupyter notebook [`basic_examples_simec_with_keras.ipynb`](https://github.com/cod3licious/simec/blob/master/basic_examples_simec_with_keras.ipynb), to get an idea of how Similarity Encoders can be implemented with keras. Then have a look at [`basic_examples_compact.ipynb`](https://github.com/cod3licious/simec/blob/master/basic_examples_compact.ipynb), which uses the `SimilarityEncoder` class from `simec.py` to setup the basic SimEc model with less lines of code.
 
 The other Jupyter notebooks contain further examples and experiments reported in the paper.
 
