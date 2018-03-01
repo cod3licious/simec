@@ -186,4 +186,4 @@ class SimilarityEncoder(object):
             - S': m x out_dim output matrix with approximated similarities to the out_dim targets
         """
         assert self.model_embed is not None, "need to fit model first"
-        return self.model_embed.predict(X)
+        return self.model.predict(X)
