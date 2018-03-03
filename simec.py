@@ -80,7 +80,7 @@ class LastLayerReg(Regularizer):
 class SimilarityEncoder(object):
 
     def __init__(self, in_dim, embedding_dim, out_dim, hidden_layers=[], sparse_inputs=False, mask_value=None,
-                 l2_reg=0.00000001, l2_reg_emb=0.00001, l2_reg_out=0., s_ll_reg=0., S_ll=None, orth_reg=0.,
+                 l2_reg=0.00000001, l2_reg_emb=0.00001, l2_reg_out=0., s_ll_reg=0., S_ll=None, orth_reg=0., W_ll=None,
                  opt=keras.optimizers.Adamax(lr=0.0005)):
         """
         Similarity Encoder (SimEc) neural network model
@@ -101,6 +101,13 @@ class SimilarityEncoder(object):
                         similarity matrix. (default: 0.; if > 0. need to give S_ll)
             - S_ll: matrix that the dot product of the last layer should approximate (see above), needs to be (out_dim x out_dim)
             - orth_reg: float, regularization strength for (I - W_-1 W_-1^T), i.e. to encourage orthogonal rows in the last layer
+            - W_ll: matrix that should be used as the frozen weights of the last layer; this should be used if you factorize
+                    an (m x n) matrix R and want to get the mapping for both some (m x D) features as well as some (n x P) features.
+                    To do this, first train a SimEc to approximate R using the (m x D) feature matrix as input. After training,
+                    use simec.transform(X) to get the (m x embedding_dim) embedding Y. Then train another SimEc using the
+                    (n x P) feature matrix as input to approximate R.T and this time set W_ll=Y.T. Then, with both SimEcs you
+                    can project the (m x D) as well as the (n x P) feature vectors into the same embedding space where their
+                    scalar product approximates R.
             - opt: default: keras.optimizers.Adamax(lr=0.0005), the optimizer used for training the model
         """
         # checks for s_ll_regularization
@@ -130,8 +137,13 @@ class SimilarityEncoder(object):
             embedding = Dense(embedding_dim, activation='linear',
                               kernel_regularizer=keras.regularizers.l2(l2_reg_emb))(x)
         # add another linear layer to get the linear approximation of the target similarities
-        outputs = Dense(out_dim, activation='linear', use_bias=False,
-                        kernel_regularizer=LastLayerReg(l2_reg_out, s_ll_reg, S_ll, orth_reg, embedding_dim, mask_value))(embedding)
+        if W_ll is None:
+            outputs = Dense(out_dim, activation='linear', use_bias=False,
+                            kernel_regularizer=LastLayerReg(l2_reg_out, s_ll_reg, S_ll, orth_reg, embedding_dim, mask_value))(embedding)
+        else:
+            assert W_ll.shape[0] == embedding_dim, "W_ll.shape[0] doesn't match embedding_dim (%i != %i)" % (W_ll.shape[0], embedding_dim)
+            assert W_ll.shape[1] == out_dim, "W_ll.shape[1] doesn't match out_dim (%i != %i)" % (W_ll.shape[1], out_dim)
+            outputs = Dense(out_dim, activation='linear', use_bias=False, trainable=False, weights=[W_ll])(embedding)
         # put it all into a model
         self.model = Model(inputs=inputs, outputs=outputs)
         # compile the model to minimize the MSE
@@ -173,6 +185,7 @@ class SimilarityEncoder(object):
             - Y: m x embedding_dim embedding matrix
         """
         assert self.model_embed is not None, "need to fit model first"
+        assert X.shape[1] == self.in_dim, "input dim of data doesn't match (%i != %i)" % (X.shape[1], self.in_dim)
         return self.model_embed.predict(X)
 
     def predict(self, X):
@@ -186,4 +199,5 @@ class SimilarityEncoder(object):
             - S': m x out_dim output matrix with approximated similarities to the out_dim targets
         """
         assert self.model_embed is not None, "need to fit model first"
+        assert X.shape[1] == self.in_dim, "input dim of data doesn't match (%i != %i)" % (X.shape[1], self.in_dim)
         return self.model.predict(X)
