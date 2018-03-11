@@ -5,7 +5,7 @@ tf.set_random_seed(28)
 import keras
 import keras.backend as K
 from keras.models import Sequential, Model
-from keras.layers import Input, Dense
+from keras.layers import Input, Dense, Reshape
 from keras.regularizers import Regularizer
 from keras.losses import mean_squared_error
 
@@ -88,7 +88,8 @@ class SimilarityEncoder(object):
         Input:
             - in_dim: dimensionality of the input feature vector
             - embedding_dim: dimensionality of the embedding layer
-            - out_dim: dimensionality of the output / number of targets
+            - out_dim: dimensionality of the output / number of targets; if out_dim is a tuple, e.g. (n_targets, n_similarities)
+                       then s_ll_reg and orth_reg are ignored
             - hidden_layers: list with tuples of (number of hidden units [int], activation function [string or keras function])
             - sparse_inputs: boolean, whether the input matrix is sparse (default: False)
             - mask_value: if some entries of the target matrix are missing, set them e.g. to -100 and then set
@@ -117,6 +118,10 @@ class SimilarityEncoder(object):
         # save some parameters we might need for later checks
         self.in_dim = in_dim
         self.out_dim = out_dim
+        self.reshape_output = None
+        if isinstance(out_dim, tuple):
+            out_dim, self.reshape_output = np.prod(out_dim), out_dim
+            s_ll_reg, S_ll, orth_reg = 0., None, 0.
         # inputs - might be sparse
         inputs = Input(shape=(in_dim,), sparse=sparse_inputs)
         # linear simec only gets the linear layer that maps to the embedding
@@ -144,6 +149,9 @@ class SimilarityEncoder(object):
             assert W_ll.shape[0] == embedding_dim, "W_ll.shape[0] doesn't match embedding_dim (%i != %i)" % (W_ll.shape[0], embedding_dim)
             assert W_ll.shape[1] == out_dim, "W_ll.shape[1] doesn't match out_dim (%i != %i)" % (W_ll.shape[1], out_dim)
             outputs = Dense(out_dim, activation='linear', use_bias=False, trainable=False, weights=[W_ll])(embedding)
+        # possibly reshape the output if multiple similarities are used as targets
+        if self.reshape_output is not None:
+            outputs = Reshape(self.reshape_output)(outputs)
         # put it all into a model
         self.model = Model(inputs=inputs, outputs=outputs)
         # compile the model to minimize the MSE
@@ -169,10 +177,16 @@ class SimilarityEncoder(object):
         """
         assert X.shape[1] == self.in_dim, "input dim of data doesn't match (%i != %i)" % (X.shape[1], self.in_dim)
         assert X.shape[0] == S.shape[0], "number of samples for inputs and targets doesn't match (%i != %i)" % (X.shape[0], S.shape[0])
-        assert S.shape[1] == self.out_dim, "output dim of targets doesn't match (%i != %i)" % (S.shape[1], self.out_dim)
+        if self.reshape_output is None:
+            assert S.shape[1] == self.out_dim, "output dim of targets doesn't match (%i != %i)" % (S.shape[1], self.out_dim)
+        else:
+            assert S.shape[1:] == self.reshape_output, "output dims of targets don't match (%r != %r)" % (S.shape[1:], self.reshape_output)
         self.model.fit(X, S, epochs=epochs, verbose=verbose)
         # store the model we need for the prediction
-        self.model_embed = Sequential(self.model.layers[:-1])
+        if self.reshape_output is None:
+            self.model_embed = Sequential(self.model.layers[:-1])
+        else:
+            self.model_embed = Sequential(self.model.layers[:-2])
 
     def transform(self, X):
         """
