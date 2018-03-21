@@ -43,7 +43,7 @@ def masked_mse(mask_value):
 
 class LastLayerReg(Regularizer):
 
-    def __init__(self, l2_reg=0., s_ll_reg=0., S_ll=None, orth_reg=0., embedding_dim=0, mask_value=None):
+    def __init__(self, l2_reg=0., s_ll_reg=0., S_ll=None, orth_reg=0., embedding_dim=0, reshape=None, mask_value=None):
         """
         Custom regularizer used for the last layer of a SimEc
         """
@@ -58,6 +58,7 @@ class LastLayerReg(Regularizer):
         if orth_reg > 0.:
             assert (embedding_dim > 0), "need to give shape of embedding layer, i.e. x.shape[0]"
             self.embedding_dim = embedding_dim
+        self.reshape = reshape
         if mask_value is None:
             self.errfun = mean_squared_error
         else:
@@ -67,10 +68,18 @@ class LastLayerReg(Regularizer):
         regularization = 0.
         if self.l2_reg > 0.:
             regularization += K.sum(self.l2_reg * K.square(x))
-        if self.s_ll_reg > 0.:
-            regularization += self.s_ll_reg * self.errfun(self.S_ll, K.dot(K.transpose(x), x))
-        if self.orth_reg > 0.:
-            regularization += self.orth_reg * self.errfun(K.eye(self.embedding_dim), K.dot(x, K.transpose(x)))
+        if self.reshape is None:
+            if self.s_ll_reg > 0.:
+                regularization += self.s_ll_reg * K.sum(self.errfun(self.S_ll, K.dot(K.transpose(x), x)))
+            if self.orth_reg > 0.:
+                regularization += self.orth_reg * K.sum(self.errfun(K.eye(self.embedding_dim), K.dot(x, K.transpose(x))))
+        else:
+            x_reshaped = K.reshape(x, self.reshape)
+            for i in range(self.reshape[2]):
+                if self.s_ll_reg > 0.:
+                    regularization += self.s_ll_reg * K.sum(self.errfun(self.S_ll[:,:,i], K.dot(K.transpose(x_reshaped[:,:,i]), x_reshaped[:,:,i])))
+                if self.orth_reg > 0.:
+                    regularization += self.orth_reg * K.sum(self.errfun(K.eye(self.embedding_dim), K.dot(x_reshaped[:,:,i], K.transpose(x_reshaped[:,:,i]))))
         return regularization
 
     def get_config(self):
@@ -111,17 +120,21 @@ class SimilarityEncoder(object):
                     scalar product approximates R.
             - opt: default: keras.optimizers.Adamax(lr=0.0005), the optimizer used for training the model
         """
-        # checks for s_ll_regularization
-        if s_ll_reg > 0.:
-            assert S_ll is not None, "need S_ll"
-            assert S_ll.shape == (out_dim, out_dim), "S_ll needs to be of shape (out_dim x out_dim)"
         # save some parameters we might need for later checks
         self.in_dim = in_dim
         self.out_dim = out_dim
         self.reshape_output = None
+        ll_reshape = None
         if isinstance(out_dim, tuple):
+            ll_reshape = (embedding_dim, out_dim[0], out_dim[1])
             out_dim, self.reshape_output = np.prod(out_dim), out_dim
-            s_ll_reg, S_ll, orth_reg = 0., None, 0.
+        # checks for s_ll_regularization
+        if s_ll_reg > 0.:
+            assert S_ll is not None, "need S_ll"
+            if self.reshape_output is None:
+                assert S_ll.shape == (out_dim, out_dim), "S_ll needs to be of shape (out_dim x out_dim)"
+            else:
+                assert S_ll.shape == (self.reshape_output[0], self.reshape_output[0], self.reshape_output[1]), "S_ll needs to be of shape (out_dim x out_dim x n_similarities)"
         # inputs - might be sparse
         inputs = Input(shape=(in_dim,), sparse=sparse_inputs)
         # linear simec only gets the linear layer that maps to the embedding
@@ -144,7 +157,7 @@ class SimilarityEncoder(object):
         # add another linear layer to get the linear approximation of the target similarities
         if W_ll is None:
             outputs = Dense(out_dim, activation='linear', use_bias=False,
-                            kernel_regularizer=LastLayerReg(l2_reg_out, s_ll_reg, S_ll, orth_reg, embedding_dim, mask_value))(embedding)
+                            kernel_regularizer=LastLayerReg(l2_reg_out, s_ll_reg, S_ll, orth_reg, embedding_dim, ll_reshape, mask_value))(embedding)
         else:
             assert W_ll.shape[0] == embedding_dim, "W_ll.shape[0] doesn't match embedding_dim (%i != %i)" % (W_ll.shape[0], embedding_dim)
             assert W_ll.shape[1] == out_dim, "W_ll.shape[1] doesn't match out_dim (%i != %i)" % (W_ll.shape[1], out_dim)
