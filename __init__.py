@@ -1,1 +1,2 @@
-from simec import SimilarityEncoder, center_K, masked_mse, LastLayerReg
+from simec import SimilarityEncoder, masked_mse, LastLayerReg
+from utils import center_K

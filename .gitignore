@@ -5,6 +5,8 @@
 *.py~
 *.csv
 *.db
+*.png
+*.pdf
 data/
 .ipynb_checkpoints/
 dist/

@@ -10,22 +10,6 @@ from keras.regularizers import Regularizer
 from keras.losses import mean_squared_error
 
 
-def center_K(K):
-    """
-    Center the given square (and symmetric) kernel matrix
-
-    Input:
-        - K: square (and symmetric) kernel (similarity) matrix
-    Returns:
-        - centered kernel matrix (like if you had subtracted the mean from the input data)
-    """
-    n, m = K.shape
-    assert n == m, "Kernel matrix needs to be square"
-    H = np.eye(n) - np.tile(1. / n, (n, n))
-    B = np.dot(np.dot(H, K), H)
-    return (B + B.T) / 2
-
-
 def masked_mse(mask_value):
     """
     https://github.com/fchollet/keras/issues/7065
@@ -70,16 +54,16 @@ class LastLayerReg(Regularizer):
             regularization += K.sum(self.l2_reg * K.square(x))
         if self.reshape is None:
             if self.s_ll_reg > 0.:
-                regularization += self.s_ll_reg * K.sum(self.errfun(self.S_ll, K.dot(K.transpose(x), x)))
+                regularization += self.s_ll_reg * K.mean(self.errfun(self.S_ll, K.dot(K.transpose(x), x)))
             if self.orth_reg > 0.:
-                regularization += self.orth_reg * K.sum(self.errfun(K.eye(self.embedding_dim), K.dot(x, K.transpose(x))))
+                regularization += self.orth_reg * K.mean(K.square(K.eye(self.embedding_dim) - K.dot(x, K.transpose(x))))
         else:
             x_reshaped = K.reshape(x, self.reshape)
             for i in range(self.reshape[2]):
                 if self.s_ll_reg > 0.:
-                    regularization += self.s_ll_reg * K.sum(self.errfun(self.S_ll[:,:,i], K.dot(K.transpose(x_reshaped[:,:,i]), x_reshaped[:,:,i])))
+                    regularization += self.s_ll_reg * K.mean(self.errfun(self.S_ll[:,:,i], K.dot(K.transpose(x_reshaped[:,:,i]), x_reshaped[:,:,i])))
                 if self.orth_reg > 0.:
-                    regularization += self.orth_reg * K.sum(self.errfun(K.eye(self.embedding_dim), K.dot(x_reshaped[:,:,i], K.transpose(x_reshaped[:,:,i]))))
+                    regularization += self.orth_reg * K.mean(K.square(K.eye(self.embedding_dim) - K.dot(x_reshaped[:,:,i], K.transpose(x_reshaped[:,:,i]))))
         return regularization
 
     def get_config(self):
