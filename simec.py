@@ -30,6 +30,8 @@ class LastLayerReg(Regularizer):
     def __init__(self, l2_reg=0., s_ll_reg=0., S_ll=None, orth_reg=0., embedding_dim=0, reshape=None, mask_value=None):
         """
         Custom regularizer used for the last layer of a SimEc
+        s_ll_reg enforces that W^TW approximates S,
+        orth_reg enforces that WW^T approximates lambda*I, i.e. that the vectors are orthogonal (but not necessarily length 1)
         """
         self.l2_reg = K.cast_to_floatx(l2_reg)
         self.s_ll_reg = K.cast_to_floatx(s_ll_reg)
@@ -56,14 +58,14 @@ class LastLayerReg(Regularizer):
             if self.s_ll_reg > 0.:
                 regularization += self.s_ll_reg * K.mean(self.errfun(self.S_ll, K.dot(K.transpose(x), x)))
             if self.orth_reg > 0.:
-                regularization += self.orth_reg * K.mean(K.square(K.eye(self.embedding_dim) - K.dot(x, K.transpose(x))))
+                regularization += self.orth_reg * K.mean(K.square((K.ones((self.embedding_dim, self.embedding_dim)) - K.eye(self.embedding_dim)) * K.dot(x, K.transpose(x))))
         else:
             x_reshaped = K.reshape(x, self.reshape)
             for i in range(self.reshape[2]):
                 if self.s_ll_reg > 0.:
                     regularization += self.s_ll_reg * K.mean(self.errfun(self.S_ll[:,:,i], K.dot(K.transpose(x_reshaped[:,:,i]), x_reshaped[:,:,i])))
                 if self.orth_reg > 0.:
-                    regularization += self.orth_reg * K.mean(K.square(K.eye(self.embedding_dim) - K.dot(x_reshaped[:,:,i], K.transpose(x_reshaped[:,:,i]))))
+                    regularization += self.orth_reg * K.mean(K.square((K.ones((self.embedding_dim, self.embedding_dim)) - K.eye(self.embedding_dim)) * K.dot(x_reshaped[:,:,i], K.transpose(x_reshaped[:,:,i]))))
         return regularization
 
     def get_config(self):
@@ -94,7 +96,8 @@ class SimilarityEncoder(object):
                         last layer weights should approximate the target similarities; useful when factoring a square symmetric
                         similarity matrix. (default: 0.; if > 0. need to give S_ll)
             - S_ll: matrix that the dot product of the last layer should approximate (see above), needs to be (out_dim x out_dim)
-            - orth_reg: float, regularization strength for (I - W_-1 W_-1^T), i.e. to encourage orthogonal rows in the last layer
+            - orth_reg: float, regularization strength for (lambda*I - W_-1 W_-1^T), i.e. to encourage orthogonal rows in the last layer
+                        usually only helpful when using many embedding dimensions (> 100)
             - W_ll: matrix that should be used as the frozen weights of the last layer; this should be used if you factorize
                     an (m x n) matrix R and want to get the mapping for both some (m x D) features as well as some (n x P) features.
                     To do this, first train a SimEc to approximate R using the (m x D) feature matrix as input. After training,
