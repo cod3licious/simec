@@ -76,7 +76,7 @@ class SimilarityEncoder(object):
 
     def __init__(self, in_dim, embedding_dim, out_dim, hidden_layers=[], sparse_inputs=False, mask_value=None,
                  l2_reg=0.00000001, l2_reg_emb=0.00001, l2_reg_out=0., s_ll_reg=0., S_ll=None, orth_reg=0., W_ll=None,
-                 opt=keras.optimizers.Adamax(lr=0.0005)):
+                 opt=0.0005):
         """
         Similarity Encoder (SimEc) neural network model
 
@@ -105,7 +105,8 @@ class SimilarityEncoder(object):
                     (n x P) feature matrix as input to approximate R.T and this time set W_ll=Y.T. Then, with both SimEcs you
                     can project the (m x D) as well as the (n x P) feature vectors into the same embedding space where their
                     scalar product approximates R.
-            - opt: default: keras.optimizers.Adamax(lr=0.0005), the optimizer used for training the model
+            - opt: either a float used as the learning rate for keras.optimizers.Adamax (default: lr=0.0005),
+                   or a keras optimizers instance that should be used for training the model
         """
         # save some parameters we might need for later checks
         self.in_dim = in_dim
@@ -155,6 +156,8 @@ class SimilarityEncoder(object):
         # put it all into a model
         self.model = Model(inputs=inputs, outputs=outputs)
         # compile the model to minimize the MSE
+        if isinstance(opt, float):
+            opt = keras.optimizers.Adamax(lr=opt)
         if mask_value is None:
             self.model.compile(optimizer=opt, loss='mse')
         else:
