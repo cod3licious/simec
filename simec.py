@@ -165,7 +165,7 @@ class SimilarityEncoder(object):
         # placeholder for embedding model
         self.model_embed = None
 
-    def fit(self, X, S, epochs=25, verbose=1):
+    def fit(self, X, S, epochs=25, batch_size=32, verbose=1):
         """
         Train the SimEc model
 
@@ -184,7 +184,7 @@ class SimilarityEncoder(object):
             assert S.shape[1] == self.out_dim, "output dim of targets doesn't match (%i != %i)" % (S.shape[1], self.out_dim)
         else:
             assert S.shape[1:] == self.reshape_output, "output dims of targets don't match (%r != %r)" % (S.shape[1:], self.reshape_output)
-        self.model.fit(X, S, epochs=epochs, verbose=verbose)
+        self.model.fit(X, S, epochs=epochs, batch_size=batch_size, verbose=verbose)
         # store the model we need for the prediction
         if self.reshape_output is None:
             self.model_embed = Sequential(self.model.layers[:-1])
