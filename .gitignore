@@ -9,6 +9,7 @@
 *.pdf
 data/
 .ipynb_checkpoints/
+private_notebooks/
 dist/
 build/
 simec.egg-info/
