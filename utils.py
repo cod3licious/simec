@@ -1,5 +1,4 @@
-from __future__ import division
-from __future__ import print_function
+from __future__ import unicode_literals, division, print_function, absolute_import
 import numpy as np
 from scipy.spatial.distance import pdist
 from scipy.stats import spearmanr, pearsonr

@@ -1,5 +1,5 @@
-from __future__ import division
-from __future__ import print_function
+from __future__ import unicode_literals, division, print_function, absolute_import
+from builtins import range
 import numpy as np
 from sklearn.datasets import make_circles, make_blobs, make_swiss_roll, make_s_curve
 from sklearn.utils import check_random_state

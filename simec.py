@@ -1,3 +1,5 @@
+from __future__ import unicode_literals, division, print_function, absolute_import
+from builtins import range, object
 import numpy as np
 np.random.seed(28)
 import tensorflow as tf

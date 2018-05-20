@@ -1,5 +1,5 @@
-from __future__ import division
-from __future__ import print_function
+from __future__ import unicode_literals, division, print_function, absolute_import
+from builtins import str, range
 import colorsys
 import numpy as np
 import matplotlib.pyplot as plt
