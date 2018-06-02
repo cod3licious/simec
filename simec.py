@@ -23,7 +23,7 @@ def masked_mse(mask_value):
         masked_squared_error = K.square(mask_true * (y_true - y_pred))
         masked_mse = K.sum(masked_squared_error, axis=-1) / K.sum(mask_true, axis=-1)
         return masked_mse
-    f.__name__ = 'Masked MSE (mask_value={})'.format(mask_value)
+    f.__name__ = str('Masked MSE (mask_value={})'.format(mask_value))
     return f
 
 
