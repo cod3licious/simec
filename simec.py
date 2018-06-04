@@ -2,6 +2,7 @@ from __future__ import unicode_literals, division, print_function, absolute_impo
 from builtins import range, object
 import numpy as np
 np.random.seed(28)
+import scipy.sparse as sp
 import tensorflow as tf
 tf.set_random_seed(28)
 import keras
@@ -10,6 +11,26 @@ from keras.models import Sequential, Model
 from keras.layers import Input, Dense, Reshape
 from keras.regularizers import Regularizer
 from keras.losses import mean_squared_error
+
+
+def generate_from_sparse_targets(X, S, mask_value, batch_size=32, shuffle=True):
+    # save the shape here in case S is a tensor
+    S_out_shape = list(S.shape)
+    while True:
+        # get index for every epoch
+        if shuffle:
+            idx = np.array(np.random.permutation(X.shape[0]), dtype=np.int16)
+        else:
+            idx = np.arange(X.shape[0], dtype=np.int16)
+        # generate data for each batch
+        for i in range(int(np.ceil(X.shape[0]/batch_size))):
+            b_idx = idx[i*batch_size:(i+1)*batch_size]
+            S_out_shape[0] = len(b_idx)
+            # missing values will be mask_value
+            S_batch = mask_value*np.ones(S_out_shape, dtype=np.float16)
+            # other entries are filled with entries from corresponding rows of S
+            S_batch[S[b_idx].nonzero()] = S[b_idx][S[b_idx].nonzero()]
+            yield X[b_idx], S_batch
 
 
 def masked_mse(mask_value):
@@ -21,7 +42,9 @@ def masked_mse(mask_value):
     def f(y_true, y_pred):
         mask_true = K.cast(K.not_equal(y_true, mask_value), K.floatx())
         masked_squared_error = K.square(mask_true * (y_true - y_pred))
-        masked_mse = K.sum(masked_squared_error, axis=-1) / K.sum(mask_true, axis=-1)
+        # in case mask_true is 0 everywhere, the error would be nan, therefore divide by at least 1
+        # this doesn't change anything as where sum(mask_true)==0, sum(masked_squared_error)==0 as well
+        masked_mse = K.sum(masked_squared_error, axis=-1) / K.maximum(K.sum(mask_true, axis=-1), 1)
         return masked_mse
     f.__name__ = str('Masked MSE (mask_value={})'.format(mask_value))
     return f
@@ -114,6 +137,7 @@ class SimilarityEncoder(object):
         self.in_dim = in_dim
         self.out_dim = out_dim
         self.reshape_output = None
+        self.mask_value = mask_value
         ll_reshape = None
         if isinstance(out_dim, tuple):
             ll_reshape = (embedding_dim, out_dim[0], out_dim[1])
@@ -186,7 +210,11 @@ class SimilarityEncoder(object):
             assert S.shape[1] == self.out_dim, "output dim of targets doesn't match (%i != %i)" % (S.shape[1], self.out_dim)
         else:
             assert S.shape[1:] == self.reshape_output, "output dims of targets don't match (%r != %r)" % (S.shape[1:], self.reshape_output)
-        self.model.fit(X, S, epochs=epochs, batch_size=batch_size, verbose=verbose)
+        if self.mask_value is not None and sp.issparse(S):
+            self.model.fit_generator(generate_from_sparse_targets(X, S, self.mask_value, batch_size),
+                                     epochs=epochs, verbose=verbose, steps_per_epoch=int(np.ceil(X.shape[0]/batch_size)))
+        else:
+            self.model.fit(X, S, epochs=epochs, batch_size=batch_size, verbose=verbose)
         # store the model we need for the prediction
         if self.reshape_output is None:
             self.model_embed = Sequential(self.model.layers[:-1])
