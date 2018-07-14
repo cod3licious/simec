@@ -133,11 +133,11 @@ class SimilarityEncoder(object):
             - l2_reg: float, l2 regularization strength of the hidden layers (default: 0.00000001)
             - l2_reg_emb: float, l2 regularization strength of the embedding (i.e. second to last) layer (default: 0.00001)
             - l2_reg_out: float, l2 regularization strength of the output (i.e. last) layer (default: 0.)
-            - s_ll_reg: float, regularization strength for (S - W_-1^T W_-1), i.e. how much the dot product of the
+            - s_ll_reg: float, regularization strength for (S - W_ll^T W_ll), i.e. how much the dot product of the
                         last layer weights should approximate the target similarities; useful when factoring a square symmetric
                         similarity matrix. (default: 0.; if > 0. need to give S_ll)
             - S_ll: matrix that the dot product of the last layer should approximate (see above), needs to be (out_dim x out_dim)
-            - orth_reg: float, regularization strength for (lambda*I - W_-1 W_-1^T), i.e. to encourage orthogonal rows in the last layer
+            - orth_reg: float, regularization strength for (lambda*I - W_ll W_ll^T), i.e. to encourage orthogonal rows in the last layer
                         usually only helpful when using many embedding dimensions (> 100)
             - W_ll: matrix that should be used as the frozen weights of the last layer; this should be used if you factorize
                     an (m x n) matrix R and want to get the mapping for both some (m x D) features as well as some (n x P) features.
@@ -223,6 +223,7 @@ class SimilarityEncoder(object):
             - X: n x in_dim feature matrix
             - S: n x out_dim target similarity matrix
             - epochs: int, number of epochs to train (default: 25)
+            - batch_size: int, number of samples per batch (default: 32)
             - verbose: given to the keras fit function, default: 1
 
         After training is complete, the SimEc object has another attribute "model_embed",
