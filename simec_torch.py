@@ -1,0 +1,184 @@
+from __future__ import unicode_literals, division, print_function, absolute_import
+from builtins import range, object
+import numpy as np
+np.random.seed(28)
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+import torch.optim as optim
+import torch.utils.data as tdata
+
+class Dense(nn.Linear):
+    """
+    Shorthand for a nn.Linear layer with an activation function
+
+    Args:
+        in_dim (int): number of input feature
+        out_dim (int): number of output features
+        bias (bool): If set to False, the layer will not adapt the bias. (default: True)
+        activation (callable): activation function or string (default: None) 
+    """
+    def __init__(self, in_dim, out_dim, bias=True, activation=None):
+        activation_map = {"tanh": F.tanh,
+                          "sigmoid": F.sigmoid,
+                          "relu": F.relu}
+        if activation in activation_map:
+            activation = activation_map[activation]
+        self.activation = activation
+        super(Dense, self).__init__(in_dim, out_dim, bias)
+
+    def forward(self, inputs):
+        y = super(Dense, self).forward(inputs)
+        if self.activation:
+            y = self.activation(y)
+        return y
+
+
+class SimEcModel(nn.Module):
+
+    def __init__(self, in_dim, embedding_dim, out_dim, hidden_layers=[]):
+        """
+        Similarity Encoder (SimEc) neural network PyTorch model
+
+        Input:
+            - in_dim: dimensionality of the input feature vector
+            - embedding_dim: dimensionality of the embedding layer
+            - out_dim: dimensionality of the output / number of targets; if out_dim is a tuple, e.g. (n_targets, n_similarities)
+                       then s_ll_reg and orth_reg are ignored
+            - hidden_layers: list with tuples of (number of hidden units [int], activation function [string or keras function])
+        """
+        super(SimEcModel, self).__init__()
+        # get list of activation functions (embedding and ouput layer have no activation)
+        activations = [h[1] for h in hidden_layers]
+        activations.extend([None, None])
+        # and a list of layer dimensions
+        dimensions = [in_dim]
+        dimensions.extend([h[0] for h in hidden_layers])
+        dimensions.extend([embedding_dim, out_dim])
+        # initialize dense layers (all but the last layer have a bias term)
+        layers = [Dense(dimensions[i-1], dimensions[i], bias=i<len(dimensions)-1,
+                        activation=activations[i-1]) for i in range(1, len(dimensions))]
+        # construct feed forward network
+        self.multilayer = nn.Sequential(*layers)
+        self.embedding = nn.Sequential(*layers[:-1])
+        self.W_ll = layers[-1]
+
+    def forward(self, inputs):
+        return self.multilayer(inputs)
+
+
+class SimilarityEncoder(object):
+
+    def __init__(self, in_dim, embedding_dim, out_dim, hidden_layers=[]):
+        """
+        Similarity Encoder (SimEc) neural network model wrapper
+
+        Input:
+            - in_dim: dimensionality of the input feature vector
+            - embedding_dim: dimensionality of the embedding layer
+            - out_dim: dimensionality of the output / number of targets; if out_dim is a tuple, e.g. (n_targets, n_similarities)
+                       then s_ll_reg and orth_reg are ignored
+            - hidden_layers: list with tuples of (number of hidden units [int], activation function [string or keras function])
+        """
+        self.model = SimEcModel(in_dim, embedding_dim, out_dim, hidden_layers)
+        self.device = "cpu"  # by default, before training, the model is on the cpu
+
+    def fit(self, X, S, epochs=25, batch_size=32, lr=0.0005, s_ll_reg=0., S_ll=None):
+        """
+        Train the SimEc model
+
+        Input:
+            - X: n x in_dim feature matrix
+            - S: n x out_dim target similarity matrix
+            - epochs: int, number of epochs to train (default: 25)
+            - batch_size: int, number of samples per batch (default: 32)
+            - lr: float used as the learning rate for the Adam optimizer (default: lr=0.0005)
+            - s_ll_reg: float, regularization strength for (S - W_ll^T W_ll), i.e. how much the dot product of the
+                        last layer weights should approximate the target similarities; useful when factoring a square symmetric
+                        similarity matrix. (default: 0.; if > 0. need to give S_ll)
+            - S_ll: matrix that the dot product of the last layer should approximate (see above), needs to be (out_dim x out_dim)
+        """
+        self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+        if not self.device == "cpu":
+            self.model.to(self.device)
+
+        if s_ll_reg > 0:
+            if S_ll is None:
+                print("Warning: need to give S_ll if s_ll_reg > 0.")
+                s_ll_reg = 0.
+            else:
+                S_ll = torch.from_numpy(S_ll).float()
+                if not self.device == "cpu":
+                    S_ll = S_ll.to(self.device)
+
+        criterion = nn.MSELoss()
+        optimizer = optim.Adam(self.model.parameters(), lr=lr)
+
+        n_samples = X.shape[0]
+
+        trainloader = tdata.DataLoader(tdata.TensorDataset(torch.from_numpy(X).float(), torch.from_numpy(S).float()),
+                                       batch_size=batch_size, shuffle=False)
+        # loop over the dataset multiple times
+        for epoch in range(epochs):
+
+            running_loss = 0.0
+            for i, data in enumerate(trainloader, 0):
+                # get the inputs
+                x_batch, s_batch = data
+                if not self.device == "cpu":
+                    x_batch, s_batch = x_batch.to(self.device), s_batch.to(self.device)
+
+                # zero the parameter gradients
+                optimizer.zero_grad()
+
+                # forward + backward + optimize
+                outputs = self.model(x_batch)
+                loss = criterion(outputs, s_batch)
+                running_loss += loss.item()
+                # possibly some regularization stuff based on the last layer
+                # CAREFUL! linear layer weights are stored with dimensions (out_dim, in_dim) instead of
+                # how you initialized them with (in_dim, out_dim), therefore the transpose is mixed up here!
+                if s_ll_reg > 0:
+                    loss += s_ll_reg*criterion(torch.mm(self.model.W_ll.weight, self.model.W_ll.weight.t()), S_ll)
+                loss.backward()
+                optimizer.step()
+
+            print('[epoch %d] loss: %.7f' % (epoch + 1, running_loss / (i + 1)))
+
+    def transform(self, X):
+        """
+        Project the input feature vectors to the embedding space
+
+        Input:
+            - X: m x in_dim feature matrix
+
+        Returns:
+            - Y: m x embedding_dim embedding matrix
+        """
+        X = torch.from_numpy(X).float()
+        if not self.device == "cpu":
+            X = X.to(self.device)
+        with torch.no_grad():
+            Y = self.model.embedding(X)
+            if not self.device == "cpu":
+                Y = Y.cpu()
+        return Y.numpy()
+        
+    def predict(self, X):
+        """
+        Generate the output of the network, i.e. the predicted similarities
+
+        Input:
+            - X: m x in_dim feature matrix
+
+        Returns:
+            - S': m x out_dim output matrix with approximated similarities to the out_dim targets
+        """
+        X = torch.from_numpy(X).float()
+        if not self.device == "cpu":
+            X = X.to(self.device)
+        with torch.no_grad():
+            S = self.model(X)
+            if not self.device == "cpu":
+                S = S.cpu()
+        return S.numpy()
