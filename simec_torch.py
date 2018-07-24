@@ -76,14 +76,13 @@ class SimilarityEncoder(object):
         Input:
             - in_dim: dimensionality of the input feature vector
             - embedding_dim: dimensionality of the embedding layer
-            - out_dim: dimensionality of the output / number of targets; if out_dim is a tuple, e.g. (n_targets, n_similarities)
-                       then s_ll_reg and orth_reg are ignored
+            - out_dim: dimensionality of the output / number of targets
             - hidden_layers: list with tuples of (number of hidden units [int], activation function [string or keras function])
         """
         self.model = SimEcModel(in_dim, embedding_dim, out_dim, hidden_layers)
         self.device = "cpu"  # by default, before training, the model is on the cpu
 
-    def fit(self, X, S, epochs=25, batch_size=32, lr=0.0005, s_ll_reg=0., S_ll=None):
+    def fit(self, X, S, epochs=25, batch_size=32, lr=0.0005, weight_decay=0., s_ll_reg=0., S_ll=None, orth_reg=0.):
         """
         Train the SimEc model
 
@@ -110,9 +109,14 @@ class SimilarityEncoder(object):
                 S_ll = torch.from_numpy(S_ll).float()
                 if not self.device == "cpu":
                     S_ll = S_ll.to(self.device)
+        if orth_reg > 0:
+            edim = self.model.W_ll.weight.size()[1]
+            Ones = torch.from_numpy((np.ones((edim, edim)) - np.eye(edim))).float()
+            if not self.device == "cpu":
+                Ones = Ones.to(self.device)
 
         criterion = nn.MSELoss()
-        optimizer = optim.Adam(self.model.parameters(), lr=lr)
+        optimizer = optim.Adam(self.model.parameters(), lr=lr, weight_decay=weight_decay)
 
         n_samples = X.shape[0]
 
@@ -140,6 +144,8 @@ class SimilarityEncoder(object):
                 # how you initialized them with (in_dim, out_dim), therefore the transpose is mixed up here!
                 if s_ll_reg > 0:
                     loss += s_ll_reg*criterion(torch.mm(self.model.W_ll.weight, self.model.W_ll.weight.t()), S_ll)
+                if orth_reg > 0:
+                    loss += orth_reg * torch.mean((Ones * torch.mm(self.model.W_ll.weight.t(), self.model.W_ll.weight))**2)
                 loss.backward()
                 optimizer.step()
 
