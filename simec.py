@@ -270,6 +270,7 @@ class SimilarityEncoder(object):
         Returns:
             - S': m x out_dim output matrix with approximated similarities to the out_dim targets
         """
-        assert self.model_embed is not None, "need to fit model first"
         assert X.shape[1] == self.in_dim, "input dim of data doesn't match (%i != %i)" % (X.shape[1], self.in_dim)
+        if self.model_embed is None:
+            print("WARNING: model is not fitted yet!")
         return self.model.predict(X)
