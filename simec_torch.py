@@ -4,7 +4,6 @@ import numpy as np
 np.random.seed(28)
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
 import torch.optim as optim
 import torch.utils.data as tdata
 
@@ -20,9 +19,9 @@ class Dense(nn.Linear):
         activation (callable): activation function or string (default: None)
     """
     def __init__(self, in_dim, out_dim, bias=True, activation=None):
-        activation_map = {"tanh": F.tanh,
-                          "sigmoid": F.sigmoid,
-                          "relu": F.relu}
+        activation_map = {"tanh": torch.tanh,
+                          "sigmoid": torch.sigmoid,
+                          "relu": torch.relu}
         if activation in activation_map:
             activation = activation_map[activation]
         self.activation = activation
