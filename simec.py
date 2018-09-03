@@ -57,7 +57,7 @@ def masked_binary_crossentropy(mask_value):
     """
     def f(y_true, y_pred):
         mask_true = K.cast(K.not_equal(y_true, mask_value), K.floatx())
-        masked_bce = mask_true * K.binary_crossentropy(y_true, y_pred)
+        masked_bce = mask_true * binary_crossentropy(y_true, y_pred)
         # in case mask_true is 0 everywhere, the error would be nan, therefore divide by at least 1
         # this doesn't change anything as where sum(mask_true)==0, sum(masked_bce)==0 as well
         masked_bce = K.sum(masked_bce, axis=-1) / K.maximum(K.sum(mask_true, axis=-1), 1)

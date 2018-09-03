@@ -8,6 +8,7 @@ import torch.nn.functional as F
 import torch.optim as optim
 import torch.utils.data as tdata
 
+
 class Dense(nn.Linear):
     """
     Shorthand for a nn.Linear layer with an activation function
@@ -16,7 +17,7 @@ class Dense(nn.Linear):
         in_dim (int): number of input feature
         out_dim (int): number of output features
         bias (bool): If set to False, the layer will not adapt the bias. (default: True)
-        activation (callable): activation function or string (default: None) 
+        activation (callable): activation function or string (default: None)
     """
     def __init__(self, in_dim, out_dim, bias=True, activation=None):
         activation_map = {"tanh": F.tanh,
@@ -34,52 +35,73 @@ class Dense(nn.Linear):
         return y
 
 
+class FFNet(nn.Module):
+
+    def __init__(self, in_dim, out_dim, hidden_layers=[]):
+        """
+        Neural network PyTorch model; shortcut for creating a feed forward NN that can be used as an in_net for a SimEcModel
+
+        Input:
+            - in_dim: input dimensionality
+            - out_dim: output dimensionality
+            - hidden_layers: list with tuples of (number of hidden units [int], activation function [string or function])
+        """
+        super(FFNet, self).__init__()
+        # get a list of layer dimensions: in_dim --> hl --> out_dim
+        dimensions = [in_dim]
+        dimensions.extend([h[0] for h in hidden_layers])
+        dimensions.append(out_dim)
+        # get list of activation functions (output (i.e. embedding) layer has no activation)
+        activations = [h[1] for h in hidden_layers]
+        activations.append(None)
+        # initialize dense layers
+        layers = [Dense(dimensions[i], dimensions[i+1], activation=activations[i]) for i in range(len(activations))]
+        # construct feed forward network
+        self.net = nn.Sequential(*layers)
+
+    def forward(self, inputs):
+        return self.net(inputs)
+
+
 class SimEcModel(nn.Module):
 
-    def __init__(self, in_dim, embedding_dim, out_dim, hidden_layers=[]):
+    def __init__(self, in_net, embedding_dim, out_dim):
         """
         Similarity Encoder (SimEc) neural network PyTorch model
 
         Input:
-            - in_dim: dimensionality of the input feature vector
+            - in_net: input network mapping from whatever original input to the embedding (e.g. a FFNet)
             - embedding_dim: dimensionality of the embedding layer
-            - out_dim: dimensionality of the output / number of targets; if out_dim is a tuple, e.g. (n_targets, n_similarities)
-                       then s_ll_reg and orth_reg are ignored
-            - hidden_layers: list with tuples of (number of hidden units [int], activation function [string or keras function])
+            - out_dim: dimensionality of the output / number of targets
         """
         super(SimEcModel, self).__init__()
-        # get list of activation functions (embedding and ouput layer have no activation)
-        activations = [h[1] for h in hidden_layers]
-        activations.extend([None, None])
-        # and a list of layer dimensions
-        dimensions = [in_dim]
-        dimensions.extend([h[0] for h in hidden_layers])
-        dimensions.extend([embedding_dim, out_dim])
-        # initialize dense layers (all but the last layer have a bias term)
-        layers = [Dense(dimensions[i-1], dimensions[i], bias=i<len(dimensions)-1,
-                        activation=activations[i-1]) for i in range(1, len(dimensions))]
-        # construct feed forward network
-        self.multilayer = nn.Sequential(*layers)
-        self.embedding = nn.Sequential(*layers[:-1])
-        self.W_ll = layers[-1]
+        # the simec model is the in_net, which creates the embedding,
+        self.embedding_net = in_net
+        # plus a last layer to compute the similarity approximation
+        self.W_ll = Dense(embedding_dim, out_dim, bias=False)
 
     def forward(self, inputs):
-        return self.multilayer(inputs)
+        x = self.embedding_net(inputs)
+        x = self.W_ll(x)
+        return x
 
 
 class SimilarityEncoder(object):
 
-    def __init__(self, in_dim, embedding_dim, out_dim, hidden_layers=[]):
+    def __init__(self, in_net, embedding_dim, out_dim, **kwargs):
         """
         Similarity Encoder (SimEc) neural network model wrapper
 
         Input:
-            - in_dim: dimensionality of the input feature vector
+            - in_net: either a NN model that maps from the input to the embedding OR the dimensionality of
+                      the input feature vector (int), in which case a FFNet will be created by supplying
+                      the kwargs, which should probably contain a "hidden_layers" argument
             - embedding_dim: dimensionality of the embedding layer
             - out_dim: dimensionality of the output / number of targets
-            - hidden_layers: list with tuples of (number of hidden units [int], activation function [string or keras function])
         """
-        self.model = SimEcModel(in_dim, embedding_dim, out_dim, hidden_layers)
+        if isinstance(in_net, int):
+            in_net = FFNet(in_net, embedding_dim, **kwargs)
+        self.model = SimEcModel(in_net, embedding_dim, out_dim)
         self.device = "cpu"  # by default, before training, the model is on the cpu
 
     def fit(self, X, S, epochs=25, batch_size=32, lr=0.0005, weight_decay=0., s_ll_reg=0., S_ll=None, orth_reg=0.):
@@ -117,8 +139,6 @@ class SimilarityEncoder(object):
 
         criterion = nn.MSELoss()
         optimizer = optim.Adam(self.model.parameters(), lr=lr, weight_decay=weight_decay)
-
-        n_samples = X.shape[0]
 
         trainloader = tdata.DataLoader(tdata.TensorDataset(torch.from_numpy(X).float(), torch.from_numpy(S).float()),
                                        batch_size=batch_size, shuffle=False)
@@ -165,11 +185,11 @@ class SimilarityEncoder(object):
         if not self.device == "cpu":
             X = X.to(self.device)
         with torch.no_grad():
-            Y = self.model.embedding(X)
+            Y = self.model.embedding_net(X)
             if not self.device == "cpu":
                 Y = Y.cpu()
         return Y.numpy()
-        
+
     def predict(self, X):
         """
         Generate the output of the network, i.e. the predicted similarities
