@@ -1,11 +1,16 @@
 from __future__ import unicode_literals, division, print_function, absolute_import
 from builtins import range, object
+import random
+random.seed(28)
 import numpy as np
 np.random.seed(28)
 import torch
 import torch.nn as nn
 import torch.optim as optim
 import torch.utils.data as tdata
+torch.manual_seed(28)
+torch.cuda.manual_seed(28)
+torch.backends.cudnn.deterministic = True
 
 
 class Dense(nn.Linear):
