@@ -124,8 +124,8 @@ class SimilarityEncoder(object):
             - S_ll: matrix that the dot product of the last layer should approximate (see above), needs to be (out_dim x out_dim)
         """
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-        if not self.device == "cpu":
-            self.model.to(self.device)
+        self.model.to(self.device)
+        self.model.train()
 
         if s_ll_reg > 0:
             if S_ll is None:
@@ -133,19 +133,17 @@ class SimilarityEncoder(object):
                 s_ll_reg = 0.
             else:
                 S_ll = torch.from_numpy(S_ll).float()
-                if not self.device == "cpu":
-                    S_ll = S_ll.to(self.device)
+                S_ll = S_ll.to(self.device)
         if orth_reg > 0:
             edim = self.model.W_ll.weight.size()[1]
             Ones = torch.from_numpy((np.ones((edim, edim)) - np.eye(edim))).float()
-            if not self.device == "cpu":
-                Ones = Ones.to(self.device)
+            Ones = Ones.to(self.device)
 
         criterion = nn.MSELoss()
         optimizer = optim.Adam(self.model.parameters(), lr=lr, weight_decay=weight_decay)
-
+        kwargs = {'num_workers': 1, 'pin_memory': True} if not self.device == "cpu" else {}
         trainloader = tdata.DataLoader(tdata.TensorDataset(torch.from_numpy(X).float(), torch.from_numpy(S).float()),
-                                       batch_size=batch_size, shuffle=False)
+                                       batch_size=batch_size, shuffle=False, **kwargs)
         # loop over the dataset multiple times
         for epoch in range(epochs):
 
@@ -153,8 +151,7 @@ class SimilarityEncoder(object):
             for i, data in enumerate(trainloader, 0):
                 # get the inputs
                 x_batch, s_batch = data
-                if not self.device == "cpu":
-                    x_batch, s_batch = x_batch.to(self.device), s_batch.to(self.device)
+                x_batch, s_batch = x_batch.to(self.device), s_batch.to(self.device)
 
                 # zero the parameter gradients
                 optimizer.zero_grad()
@@ -185,13 +182,10 @@ class SimilarityEncoder(object):
         Returns:
             - Y: m x embedding_dim embedding matrix
         """
-        X = torch.from_numpy(X).float()
-        if not self.device == "cpu":
-            X = X.to(self.device)
+        self.model.eval()
+        X = torch.from_numpy(X).float().to(self.device)
         with torch.no_grad():
-            Y = self.model.embedding_net(X)
-            if not self.device == "cpu":
-                Y = Y.cpu()
+            Y = self.model.embedding_net(X).cpu()
         return Y.numpy()
 
     def predict(self, X):
@@ -204,11 +198,8 @@ class SimilarityEncoder(object):
         Returns:
             - S': m x out_dim output matrix with approximated similarities to the out_dim targets
         """
-        X = torch.from_numpy(X).float()
-        if not self.device == "cpu":
-            X = X.to(self.device)
+        self.model.eval()
+        X = torch.from_numpy(X).float().to(self.device)
         with torch.no_grad():
-            S = self.model(X)
-            if not self.device == "cpu":
-                S = S.cpu()
+            S = self.model(X).cpu()
         return S.numpy()
