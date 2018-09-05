@@ -1,5 +1,6 @@
 from __future__ import unicode_literals, division, print_function, absolute_import
 from builtins import range, object
+from copy import deepcopy
 import random
 random.seed(28)
 import numpy as np
@@ -118,10 +119,13 @@ class SimilarityEncoder(object):
             - epochs: int, number of epochs to train (default: 25)
             - batch_size: int, number of samples per batch (default: 32)
             - lr: float used as the learning rate for the Adam optimizer (default: lr=0.0005)
+            - weight_decay: l2 regularization, given as a parameter to the optimizer
             - s_ll_reg: float, regularization strength for (S - W_ll^T W_ll), i.e. how much the dot product of the
                         last layer weights should approximate the target similarities; useful when factoring a square symmetric
                         similarity matrix. (default: 0.; if > 0. need to give S_ll)
             - S_ll: matrix that the dot product of the last layer should approximate (see above), needs to be (out_dim x out_dim)
+            - orth_reg: float, regularization strength for (lambda*I - W_ll W_ll^T), i.e. to encourage orthogonal rows in the last layer
+                        usually only helpful when using many embedding dimensions (> 100)
         """
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
         self.model.to(self.device)
@@ -141,14 +145,18 @@ class SimilarityEncoder(object):
 
         criterion = nn.MSELoss()
         optimizer = optim.Adam(self.model.parameters(), lr=lr, weight_decay=weight_decay)
+        lr_scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, patience=0, verbose=True)
+
         kwargs = {'num_workers': 1, 'pin_memory': True} if not self.device == "cpu" else {}
         trainloader = tdata.DataLoader(tdata.TensorDataset(torch.from_numpy(X).float(), torch.from_numpy(S).float()),
                                        batch_size=batch_size, shuffle=False, **kwargs)
         # loop over the dataset multiple times
+        best_loss = np.inf
+        best_model = None
         for epoch in range(epochs):
 
             running_loss = 0.0
-            for i, data in enumerate(trainloader, 0):
+            for i, data in enumerate(trainloader):
                 # get the inputs
                 x_batch, s_batch = data
                 x_batch, s_batch = x_batch.to(self.device), s_batch.to(self.device)
@@ -169,8 +177,15 @@ class SimilarityEncoder(object):
                     loss += orth_reg * torch.mean((Ones * torch.mm(self.model.W_ll.weight.t(), self.model.W_ll.weight))**2)
                 loss.backward()
                 optimizer.step()
-
+            if epoch > 10:
+                lr_scheduler.step(running_loss)
             print('[epoch %d] loss: %.7f' % (epoch + 1, running_loss / (i + 1)))
+            # in case the learning rate was too high or something we keep track
+            # of the model with the lowest error and use that in the end
+            if running_loss < best_loss:
+                best_loss = running_loss
+                best_model = deepcopy(self.model.state_dict())
+        self.model.load_state_dict(best_model)
 
     def transform(self, X):
         """
