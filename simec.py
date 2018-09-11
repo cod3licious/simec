@@ -229,6 +229,8 @@ class SimilarityEncoder(object):
         After training is complete, the SimEc object has another attribute "model_embed",
         which can be use to project the input feature vectors to the embedding space
         """
+        if np.max(np.abs(S)) > 5.:
+            print("Warning: For best results, S (and X) should be normalized (try S /= np.max(np.abs(S))).")
         assert X.shape[1] == self.in_dim, "input dim of data doesn't match (%i != %i)" % (X.shape[1], self.in_dim)
         assert X.shape[0] == S.shape[0], "number of samples for inputs and targets doesn't match (%i != %i)" % (X.shape[0], S.shape[0])
         if self.reshape_output is None:

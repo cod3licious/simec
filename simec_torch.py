@@ -70,7 +70,7 @@ class FFNet(nn.Module):
 
 class SimEcModel(nn.Module):
 
-    def __init__(self, in_net, embedding_dim, out_dim):
+    def __init__(self, in_net, embedding_dim, out_dim, ll_activation=None):
         """
         Similarity Encoder (SimEc) neural network PyTorch model
 
@@ -78,12 +78,13 @@ class SimEcModel(nn.Module):
             - in_net: input network mapping from whatever original input to the embedding (e.g. a FFNet)
             - embedding_dim: dimensionality of the embedding layer
             - out_dim: dimensionality of the output / number of targets
+            - ll_activation: activation function on the last layer.
         """
         super(SimEcModel, self).__init__()
         # the simec model is the in_net, which creates the embedding,
         self.embedding_net = in_net
         # plus a last layer to compute the similarity approximation
-        self.W_ll = Dense(embedding_dim, out_dim, bias=False)
+        self.W_ll = Dense(embedding_dim, out_dim, bias=False, activation=ll_activation)
 
     def forward(self, inputs):
         x = self.embedding_net(inputs)
@@ -93,7 +94,7 @@ class SimEcModel(nn.Module):
 
 class SimilarityEncoder(object):
 
-    def __init__(self, in_net, embedding_dim, out_dim, **kwargs):
+    def __init__(self, in_net, embedding_dim, out_dim, ll_activation=None, **kwargs):
         """
         Similarity Encoder (SimEc) neural network model wrapper
 
@@ -103,10 +104,12 @@ class SimilarityEncoder(object):
                       the kwargs, which should probably contain a "hidden_layers" argument
             - embedding_dim: dimensionality of the embedding layer
             - out_dim: dimensionality of the output / number of targets
+            - ll_activation: activation function on the last layer. If a different loss than mse is used,
+                             this should probably be changed as well (default: None, i.e. linear activation).
         """
         if isinstance(in_net, int):
             in_net = FFNet(in_net, embedding_dim, **kwargs)
-        self.model = SimEcModel(in_net, embedding_dim, out_dim)
+        self.model = SimEcModel(in_net, embedding_dim, out_dim, ll_activation)
         self.device = "cpu"  # by default, before training, the model is on the cpu
 
     def fit(self, X, S, epochs=25, batch_size=32, lr=0.0005, weight_decay=0., s_ll_reg=0., S_ll=None, orth_reg=0.):
@@ -127,6 +130,8 @@ class SimilarityEncoder(object):
             - orth_reg: float, regularization strength for (lambda*I - W_ll W_ll^T), i.e. to encourage orthogonal rows in the last layer
                         usually only helpful when using many embedding dimensions (> 100)
         """
+        if np.max(np.abs(S)) > 5.:
+            print("Warning: For best results, S (and X) should be normalized (try S /= np.max(np.abs(S))).")
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
         self.model.to(self.device)
         self.model.train()
@@ -145,11 +150,11 @@ class SimilarityEncoder(object):
 
         criterion = nn.MSELoss()
         optimizer = optim.Adam(self.model.parameters(), lr=lr, weight_decay=weight_decay)
-        lr_scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, patience=0, verbose=True)
+        lr_scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, patience=0, eps=0., verbose=True)
 
         kwargs = {'num_workers': 1, 'pin_memory': True} if not self.device == "cpu" else {}
         trainloader = tdata.DataLoader(tdata.TensorDataset(torch.from_numpy(X).float(), torch.from_numpy(S).float()),
-                                       batch_size=batch_size, shuffle=False, **kwargs)
+                                       batch_size=batch_size, shuffle=True, **kwargs)
         # loop over the dataset multiple times
         best_loss = np.inf
         best_model = None
@@ -177,9 +182,9 @@ class SimilarityEncoder(object):
                     loss += orth_reg * torch.mean((Ones * torch.mm(self.model.W_ll.weight.t(), self.model.W_ll.weight))**2)
                 loss.backward()
                 optimizer.step()
-            if epoch > 10:
-                lr_scheduler.step(running_loss)
             print('[epoch %d] loss: %.7f' % (epoch + 1, running_loss / (i + 1)))
+            if epoch >= 4:
+                lr_scheduler.step(running_loss)
             # in case the learning rate was too high or something we keep track
             # of the model with the lowest error and use that in the end
             if running_loss < best_loss:
