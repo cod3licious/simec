@@ -248,7 +248,7 @@ class SimilarityEncoder(object):
         else:
             self.model_embed = Sequential(self.model.layers[:-2])
 
-    def transform(self, X):
+    def transform(self, X, warn=True):
         """
         Project the input feature vectors to the embedding space
 
@@ -258,11 +258,12 @@ class SimilarityEncoder(object):
         Returns:
             - Y: m x embedding_dim embedding matrix
         """
-        assert self.model_embed is not None, "need to fit model first"
         assert X.shape[1] == self.in_dim, "input dim of data doesn't match (%i != %i)" % (X.shape[1], self.in_dim)
+        if self.model_embed is None and warn:
+            print("WARNING: model is not fitted yet!")
         return self.model_embed.predict(X)
 
-    def predict(self, X):
+    def predict(self, X, warn=True):
         """
         Generate the output of the network, i.e. the predicted similarities
 
@@ -273,6 +274,6 @@ class SimilarityEncoder(object):
             - S': m x out_dim output matrix with approximated similarities to the out_dim targets
         """
         assert X.shape[1] == self.in_dim, "input dim of data doesn't match (%i != %i)" % (X.shape[1], self.in_dim)
-        if self.model_embed is None:
+        if self.model_embed is None and warn:
             print("WARNING: model is not fitted yet!")
         return self.model.predict(X)
