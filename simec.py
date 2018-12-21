@@ -10,7 +10,7 @@ import keras.backend as K
 from keras.models import Sequential, Model
 from keras.layers import Input, Dense, Reshape
 from keras.regularizers import Regularizer
-from keras.losses import mean_squared_error, binary_crossentropy
+from keras.losses import mean_squared_error, mean_absolute_error, binary_crossentropy
 
 
 def generate_from_sparse_targets(X, S, mask_value, batch_size=32, shuffle=True):
@@ -47,6 +47,22 @@ def masked_mse(mask_value):
         masked_mse = K.sum(masked_squared_error, axis=-1) / K.maximum(K.sum(mask_true, axis=-1), 1)
         return masked_mse
     f.__name__ = str('Masked MSE (mask_value={})'.format(mask_value))
+    return f
+
+
+def masked_mae(mask_value):
+    """
+    compute mean absolute error using only those values not equal to mask_value,
+    e.g. to deal with missing values in the target similarity matrix
+    """
+    def f(y_true, y_pred):
+        mask_true = K.cast(K.not_equal(y_true, mask_value), K.floatx())
+        masked_absolute_error = K.abs(mask_true * (y_true - y_pred))
+        # in case mask_true is 0 everywhere, the error would be nan, therefore divide by at least 1
+        # this doesn't change anything as where sum(mask_true)==0, sum(masked_absolute_error)==0 as well
+        masked_mae = K.sum(masked_absolute_error, axis=-1) / K.maximum(K.sum(mask_true, axis=-1), 1)
+        return masked_mae
+    f.__name__ = str('Masked MAE (mask_value={})'.format(mask_value))
     return f
 
 
@@ -148,7 +164,7 @@ class SimilarityEncoder(object):
                     scalar product approximates R.
             - opt: either a float used as the learning rate for keras.optimizers.Adamax (default: lr=0.0005),
                    or a keras optimizers instance that should be used for training the model
-            - loss: which loss function to use (if mask_value != None, only 'mse' or 'binary_crossentropy'; default: loss='mse').
+            - loss: which loss function to use (if mask_value != None, only 'mse', 'mae', or 'binary_crossentropy'; default: loss='mse').
             - ll_activation: activation function on the last layer. If a different loss than mse is used,
                              this should probably be changed as well (default: 'linear').
         """
@@ -206,9 +222,11 @@ class SimilarityEncoder(object):
         if mask_value is None:
             self.model.compile(optimizer=opt, loss=loss)
         else:
-            assert loss in ("mse", "binary_crossentropy"), "Loss %s not implemented for target matrices with missing values. Use 'mse' or 'binary_crossentropy'." % loss
+            assert loss in ("mse", "mae", "binary_crossentropy"), "Loss %s not implemented for target matrices with missing values. Use 'mse' or 'binary_crossentropy'." % loss
             if loss == "binary_crossentropy":
                 self.model.compile(optimizer=opt, loss=masked_binary_crossentropy(mask_value))
+            elif loss == "mae":
+                self.model.compile(optimizer=opt, loss=masked_mae(mask_value))
             else:
                 self.model.compile(optimizer=opt, loss=masked_mse(mask_value))
 
