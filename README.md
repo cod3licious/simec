@@ -1,7 +1,7 @@
 # Similarity Encoders (SimEc)
 
 This repository contains the code for the Similarity Encoder (SimEc) neural network architecture based on the `keras` library. Several Jupyter notebooks with examples should give you an idea of how to use this code. A basic setup of the model is also implemented using the `torch` NN library.
-For further details on the model and experiments please refer to the [paper](http://www.czasopisma.pan.pl/Content/109871/PDF/07_821-830_00901_Bpast.No.66-6_31.12.18_K2.pdf?handler=pdf) - and of course if any of this code was helpful for your research, please consider citing it:
+For further details on the model and experiments please refer to the [paper](https://arxiv.org/abs/1702.01824) - and of course if any of this code was helpful for your research, please consider citing it:
 ```
 @article{horn2018simec,
   title={Predicting Pairwise Relations with Neural Similarity Encoders},
