@@ -112,7 +112,7 @@ class SimilarityEncoder(object):
         self.model = SimEcModel(in_net, embedding_dim, out_dim, ll_activation)
         self.device = "cpu"  # by default, before training, the model is on the cpu
 
-    def fit(self, X, S, epochs=25, batch_size=32, lr=0.0005, weight_decay=0., s_ll_reg=0., S_ll=None, orth_reg=0.):
+    def fit(self, X, S, epochs=25, batch_size=32, lr=0.0005, weight_decay=0., s_ll_reg=0., S_ll=None, orth_reg=0., warn=True):
         """
         Train the SimEc model
 
@@ -130,7 +130,7 @@ class SimilarityEncoder(object):
             - orth_reg: float, regularization strength for (lambda*I - W_ll W_ll^T), i.e. to encourage orthogonal rows in the last layer
                         usually only helpful when using many embedding dimensions (> 100)
         """
-        if np.max(np.abs(S)) > 5.:
+        if np.max(np.abs(S)) > 5. and warn:
             print("Warning: For best results, S (and X) should be normalized (try S /= np.max(np.abs(S))).")
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
         self.model.to(self.device)
@@ -178,7 +178,8 @@ class SimilarityEncoder(object):
                 # how you initialized them with (in_dim, out_dim), therefore the transpose is mixed up here!
                 if s_ll_reg > 0:
                     loss += s_ll_reg*criterion(torch.mm(self.model.W_ll.weight, self.model.W_ll.weight.t()), S_ll)
-                if orth_reg > 0:
+                # since orth_reg can slow down convergence, don't use it right from the start
+                if orth_reg > 0 and epoch > epochs/3:
                     loss += orth_reg * torch.mean((Ones * torch.mm(self.model.W_ll.weight.t(), self.model.W_ll.weight))**2)
                 loss.backward()
                 optimizer.step()
