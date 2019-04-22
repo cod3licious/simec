@@ -125,10 +125,10 @@ class SimilarityEncoder(object):
             - weight_decay: l2 regularization, given as a parameter to the optimizer
             - s_ll_reg: float, regularization strength for (S - W_ll^T W_ll), i.e. how much the dot product of the
                         last layer weights should approximate the target similarities; useful when factoring a square symmetric
-                        similarity matrix. (default: 0.; if > 0. need to give S_ll)
+                        similarity matrix. (default: 0.; if > 0. need to give S_ll): try 100.
             - S_ll: matrix that the dot product of the last layer should approximate (see above), needs to be (out_dim x out_dim)
             - orth_reg: float, regularization strength for (lambda*I - W_ll W_ll^T), i.e. to encourage orthogonal rows in the last layer
-                        usually only helpful when using many embedding dimensions (> 100)
+                        usually only helpful when using many embedding dimensions (> 100): try <= 1.
         """
         if np.max(np.abs(S)) > 5. and warn:
             print("Warning: For best results, S (and X) should be normalized (try S /= np.max(np.abs(S))).")

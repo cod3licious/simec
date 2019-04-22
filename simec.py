@@ -133,7 +133,7 @@ class SimilarityEncoder(object):
 
     def __init__(self, in_dim, embedding_dim, out_dim, hidden_layers=[], sparse_inputs=False, mask_value=None,
                  l2_reg=0.00000001, l2_reg_emb=0.00001, l2_reg_out=0., s_ll_reg=0., S_ll=None, orth_reg=0., W_ll=None,
-                 opt=0.0005, loss='mse', ll_activation='linear'):
+                 wll_frozen=False, opt=0.0005, loss='mse', ll_activation='linear'):
         """
         Similarity Encoder (SimEc) neural network model
 
@@ -151,17 +151,19 @@ class SimilarityEncoder(object):
             - l2_reg_out: float, l2 regularization strength of the output (i.e. last) layer (default: 0.)
             - s_ll_reg: float, regularization strength for (S - W_ll^T W_ll), i.e. how much the dot product of the
                         last layer weights should approximate the target similarities; useful when factoring a square symmetric
-                        similarity matrix. (default: 0.; if > 0. need to give S_ll)
+                        similarity matrix. (default: 0.; if > 0. need to give S_ll): try 100.
             - S_ll: matrix that the dot product of the last layer should approximate (see above), needs to be (out_dim x out_dim)
             - orth_reg: float, regularization strength for (lambda*I - W_ll W_ll^T), i.e. to encourage orthogonal rows in the last layer
-                        usually only helpful when using many embedding dimensions (> 100)
-            - W_ll: matrix that should be used as the frozen weights of the last layer; this should be used if you factorize
+                        usually only helpful when using many embedding dimensions (> 100): try <= 1.
+            - W_ll: matrix that should be used as the (frozen) weights of the last layer; this should be used if you factorize
                     an (m x n) matrix R and want to get the mapping for both some (m x D) features as well as some (n x P) features.
                     To do this, first train a SimEc to approximate R using the (m x D) feature matrix as input. After training,
                     use simec.transform(X) to get the (m x embedding_dim) embedding Y. Then train another SimEc using the
                     (n x P) feature matrix as input to approximate R.T and this time set W_ll=Y.T. Then, with both SimEcs you
                     can project the (m x D) as well as the (n x P) feature vectors into the same embedding space where their
                     scalar product approximates R.
+                    W_ll could also be initialized by the kPCA embedding of the similarity matrix.
+            - wll_frozen: if W_ll is initialized manually (W_ll given), whether the parameters should be frozen (bool, default: False)
             - opt: either a float used as the learning rate for keras.optimizers.Adamax (default: lr=0.0005),
                    or a keras optimizers instance that should be used for training the model
             - loss: which loss function to use (if mask_value != None, only 'mse', 'mae', or 'binary_crossentropy'; default: loss='mse').
@@ -210,7 +212,7 @@ class SimilarityEncoder(object):
         else:
             assert W_ll.shape[0] == embedding_dim, "W_ll.shape[0] doesn't match embedding_dim (%i != %i)" % (W_ll.shape[0], embedding_dim)
             assert W_ll.shape[1] == out_dim, "W_ll.shape[1] doesn't match out_dim (%i != %i)" % (W_ll.shape[1], out_dim)
-            outputs = Dense(out_dim, activation=ll_activation, use_bias=False, trainable=False, weights=[W_ll])(embedding)
+            outputs = Dense(out_dim, activation=ll_activation, use_bias=False, trainable=not wll_frozen, weights=[W_ll])(embedding)
         # possibly reshape the output if multiple similarities are used as targets
         if self.reshape_output is not None:
             outputs = Reshape(self.reshape_output)(outputs)
