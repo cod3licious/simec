@@ -70,7 +70,7 @@ class FFNet(nn.Module):
 
 class SimEcModel(nn.Module):
 
-    def __init__(self, in_net, embedding_dim, out_dim, ll_activation=None):
+    def __init__(self, in_net, embedding_dim, out_dim, ll_activation=None, W_ll=None):
         """
         Similarity Encoder (SimEc) neural network PyTorch model
 
@@ -85,6 +85,10 @@ class SimEcModel(nn.Module):
         self.embedding_net = in_net
         # plus a last layer to compute the similarity approximation
         self.W_ll = Dense(embedding_dim, out_dim, bias=False, activation=ll_activation)
+        # possibly initialize W_ll, e.g., to KPCA embedding
+        if W_ll is not None:
+            assert W_ll.shape == (embedding_dim, out_dim), "W_ll shape mismatch; should be (%i, %i)" % (embedding_dim, out_dim)
+            self.W_ll.weight.data.copy_(torch.from_numpy(W_ll.T))
 
     def forward(self, inputs):
         x = self.embedding_net(inputs)
@@ -94,7 +98,7 @@ class SimEcModel(nn.Module):
 
 class SimilarityEncoder(object):
 
-    def __init__(self, in_net, embedding_dim, out_dim, ll_activation=None, **kwargs):
+    def __init__(self, in_net, embedding_dim, out_dim, ll_activation=None, W_ll=None, **kwargs):
         """
         Similarity Encoder (SimEc) neural network model wrapper
 
@@ -109,7 +113,7 @@ class SimilarityEncoder(object):
         """
         if isinstance(in_net, int):
             in_net = FFNet(in_net, embedding_dim, **kwargs)
-        self.model = SimEcModel(in_net, embedding_dim, out_dim, ll_activation)
+        self.model = SimEcModel(in_net, embedding_dim, out_dim, ll_activation, W_ll)
         self.device = "cpu"  # by default, before training, the model is on the cpu
 
     def fit(self, X, S, epochs=25, batch_size=32, lr=0.0005, weight_decay=0., s_ll_reg=0., S_ll=None, orth_reg=0., warn=True):
