@@ -70,7 +70,7 @@ class FFNet(nn.Module):
 
 class SimEcModel(nn.Module):
 
-    def __init__(self, in_net, embedding_dim, out_dim, ll_activation=None, W_ll=None):
+    def __init__(self, in_net, embedding_dim, out_dim, ll_activation=None, W_ll=None, wll_frozen=False):
         """
         Similarity Encoder (SimEc) neural network PyTorch model
 
@@ -79,6 +79,15 @@ class SimEcModel(nn.Module):
             - embedding_dim: dimensionality of the embedding layer
             - out_dim: dimensionality of the output / number of targets
             - ll_activation: activation function on the last layer.
+            - W_ll: matrix that should be used as the (frozen) weights of the last layer; this should be used if you factorize
+                    an (m x n) matrix R and want to get the mapping for both some (m x D) features as well as some (n x P) features.
+                    To do this, first train a SimEc to approximate R using the (m x D) feature matrix as input. After training,
+                    use simec.transform(X) to get the (m x embedding_dim) embedding Y. Then train another SimEc using the
+                    (n x P) feature matrix as input to approximate R.T and this time set W_ll=Y.T. Then, with both SimEcs you
+                    can project the (m x D) as well as the (n x P) feature vectors into the same embedding space where their
+                    scalar product approximates R.
+                    W_ll could also be initialized by the kPCA embedding of the similarity matrix.
+            - wll_frozen: if W_ll is initialized manually (W_ll given), whether the parameters should be frozen (bool, default: False)
         """
         super(SimEcModel, self).__init__()
         # the simec model is the in_net, which creates the embedding,
@@ -89,6 +98,8 @@ class SimEcModel(nn.Module):
         if W_ll is not None:
             assert W_ll.shape == (embedding_dim, out_dim), "W_ll shape mismatch; should be (%i, %i)" % (embedding_dim, out_dim)
             self.W_ll.weight.data.copy_(torch.from_numpy(W_ll.T))
+            if wll_frozen:
+                self.W_ll.weight.requires_grad = False
 
     def forward(self, inputs):
         x = self.embedding_net(inputs)
@@ -98,7 +109,7 @@ class SimEcModel(nn.Module):
 
 class SimilarityEncoder(object):
 
-    def __init__(self, in_net, embedding_dim, out_dim, ll_activation=None, W_ll=None, **kwargs):
+    def __init__(self, in_net, embedding_dim, out_dim, ll_activation=None, W_ll=None, wll_frozen=False, **kwargs):
         """
         Similarity Encoder (SimEc) neural network model wrapper
 
@@ -110,10 +121,19 @@ class SimilarityEncoder(object):
             - out_dim: dimensionality of the output / number of targets
             - ll_activation: activation function on the last layer. If a different loss than mse is used,
                              this should probably be changed as well (default: None, i.e. linear activation).
+            - W_ll: matrix that should be used as the (frozen) weights of the last layer; this should be used if you factorize
+                    an (m x n) matrix R and want to get the mapping for both some (m x D) features as well as some (n x P) features.
+                    To do this, first train a SimEc to approximate R using the (m x D) feature matrix as input. After training,
+                    use simec.transform(X) to get the (m x embedding_dim) embedding Y. Then train another SimEc using the
+                    (n x P) feature matrix as input to approximate R.T and this time set W_ll=Y.T. Then, with both SimEcs you
+                    can project the (m x D) as well as the (n x P) feature vectors into the same embedding space where their
+                    scalar product approximates R.
+                    W_ll could also be initialized by the kPCA embedding of the similarity matrix.
+            - wll_frozen: if W_ll is initialized manually (W_ll given), whether the parameters should be frozen (bool, default: False)
         """
         if isinstance(in_net, int):
             in_net = FFNet(in_net, embedding_dim, **kwargs)
-        self.model = SimEcModel(in_net, embedding_dim, out_dim, ll_activation, W_ll)
+        self.model = SimEcModel(in_net, embedding_dim, out_dim, ll_activation, W_ll, wll_frozen)
         self.device = "cpu"  # by default, before training, the model is on the cpu
 
     def fit(self, X, S, epochs=25, batch_size=32, lr=0.0005, weight_decay=0., s_ll_reg=0., S_ll=None, orth_reg=0., warn=True):
