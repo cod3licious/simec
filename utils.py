@@ -4,6 +4,23 @@ from scipy.spatial.distance import pdist
 from scipy.stats import spearmanr, pearsonr
 
 
+def compute_W_ll(S_ll, embedding_dim):
+    """
+    given the square and symmetric similarity matrix used for the last layer regularization,
+    compute the optimal weights W_ll via eigendecomposition
+
+    Inputs:
+        - S_ll: square (and symmetric) similarity matrix
+        - embedding_dim: embedding dimensionality of the SimEc network
+    Returns:
+        - W_ll: embedding_dim x S_ll.shape[1] optimal weight matrix
+    """
+    D, V = np.linalg.eig(S_ll)
+    D, V = D[np.argsort(D)[::-1]], V[:, np.argsort(D)[::-1]]
+    W_ll = np.dot(V.real[:, :embedding_dim], np.diag(np.sqrt(np.abs(D.real[:embedding_dim]))))
+    return W_ll.T
+
+
 def center_K(K):
     """
     Center the given square (and symmetric) kernel matrix
@@ -24,6 +41,7 @@ def check_embed_match(X_embed1, X_embed2):
     """
     Check whether the two embeddings are almost the same by computing their normalized euclidean distances
     in the embedding space and checking the correlation.
+
     Inputs:
         - X_embed1, X_embed2: two Nxd matrices with coordinates in the embedding space
     Returns:
@@ -48,6 +66,7 @@ def check_similarity_match(X_embed, S, X_embed_is_S_approx=False, norm=False):
     Since SimEcs are supposed to project the data into an embedding space where the target similarities
     can be linearly approximated; check if X_embed*X_embed^T = S
     (check mean squared error, R^2, and Spearman correlation coefficient)
+
     Inputs:
         - X_embed: Nxd matrix with coordinates in the embedding space
         - S: NxN matrix with target similarities (do whatever transformations were done before using this
