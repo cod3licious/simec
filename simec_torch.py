@@ -150,7 +150,7 @@ class SimilarityEncoder(object):
 
         criterion = nn.MSELoss()
         optimizer = optim.Adam(self.model.parameters(), lr=lr, weight_decay=weight_decay)
-        lr_scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, patience=0, eps=0., verbose=True)
+        lr_scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, patience=5, eps=0.,verbose=True)
 
         kwargs = {'num_workers': 1, 'pin_memory': True} if not self.device == "cpu" else {}
         trainloader = tdata.DataLoader(tdata.TensorDataset(torch.from_numpy(X).float(), torch.from_numpy(S).float()),
