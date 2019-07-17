@@ -27,6 +27,7 @@ def examine_param_space(model, sd1, sd2, train_loader, test_loader, criterion, p
     loss_test = []
     alphas = np.arange(-1, 2.1, 0.1)
     for a in alphas:
+        print("alpha: %.1f " % a, end="\r")
         # get model with interpolated weights
         sd_tmp = {p: (1-a)*sd1[p] + a*sd2[p] for p in sd1}
         model.load_state_dict(sd_tmp)
@@ -48,6 +49,7 @@ def examine_param_space(model, sd1, sd2, train_loader, test_loader, criterion, p
         loss_train.append(compute_loss(train_loader))
         # test
         loss_test.append(compute_loss(test_loader))
+    print("alpha: %.1f...done." % a)
 
     # possibly plot the results
     if plot is not None:
@@ -56,6 +58,7 @@ def examine_param_space(model, sd1, sd2, train_loader, test_loader, criterion, p
         plt.plot(alphas, loss_test, label="$J(\\theta)$ test")
         plt.xlabel("$\\alpha$")
         plt.ylabel("$J((1-\\alpha)\\cdot\\theta_0 + \\alpha\\cdot\\theta_1)$")
+        plt.legend(loc=0)
         plt.title(plot)
     else:
         return alphas, loss_train, loss_test
