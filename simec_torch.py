@@ -2,13 +2,13 @@ from __future__ import unicode_literals, division, print_function, absolute_impo
 from builtins import range, object
 from copy import deepcopy
 import random
-random.seed(28)
 import numpy as np
-np.random.seed(28)
 import torch
 import torch.nn as nn
 import torch.optim as optim
 import torch.utils.data as tdata
+random.seed(28)
+np.random.seed(28)
 torch.manual_seed(28)
 torch.cuda.manual_seed(28)
 torch.backends.cudnn.deterministic = True
@@ -174,7 +174,7 @@ class SimilarityEncoder(object):
 
         criterion = nn.MSELoss()
         optimizer = optim.Adam(self.model.parameters(), lr=lr, weight_decay=weight_decay)
-        lr_scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, patience=5, eps=0.,verbose=True)
+        lr_scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, patience=5, eps=0., verbose=True)
 
         kwargs = {'num_workers': 1, 'pin_memory': True} if not self.device == "cpu" else {}
         trainloader = tdata.DataLoader(tdata.TensorDataset(torch.from_numpy(X).float(), torch.from_numpy(S).float()),
@@ -212,7 +212,7 @@ class SimilarityEncoder(object):
                 lr_scheduler.step(running_loss)
             # in case the learning rate was too high or something we keep track
             # of the model with the lowest error and use that in the end
-            if running_loss < best_loss:
+            if running_loss <= best_loss:
                 best_loss = running_loss
                 best_model = deepcopy(self.model.state_dict())
         self.model.load_state_dict(best_model)
