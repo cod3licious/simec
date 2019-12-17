@@ -1,10 +1,8 @@
 from __future__ import unicode_literals, division, print_function, absolute_import
 from builtins import range, object
 import numpy as np
-np.random.seed(28)
 import scipy.sparse as sp
 import tensorflow as tf
-tf.set_random_seed(28)
 import keras
 import keras.backend as K
 from keras.models import Sequential, Model
