@@ -18,8 +18,8 @@ For further details on the model and experiments please refer to the [paper](htt
 This code is still work in progress and intended for research purposes. It was programmed for Python 3 but should also work in Python 2.7.
 
 #### dependencies
-- *main simec code:* `numpy`, `keras` (with `tensorflow` backend) (or `torch`)
-- *examples:* `scipy`, `sklearn`, `matplotlib`, [`nlputils`](https://github.com/cod3licious/nlputils)
+- *main simec code:* `numpy`, `keras` (version 2.2.4 with `tensorflow` backend (version 1.x.x)) (or `torch`)
+- *examples:* `scipy`, `sklearn`, `matplotlib`, [`nlputils`](https://github.com/cod3licious/nlputils), `innvestigate`
 
 ### Getting your hands dirty
 
