@@ -141,7 +141,7 @@ class SimilarityEncoder(object):
             - out_dim: dimensionality of the output / number of targets; if out_dim is a tuple, e.g. (n_targets, n_similarities)
                        then s_ll_reg and orth_reg are ignored
             - hidden_layers: list with tuples of (number of hidden units [int], activation function [string or keras function])
-            - sparse_inputs: boolean, whether the input matrix is sparse (default: False)
+            - sparse_inputs: boolean, whether the input matrix is a scipy sparse matrix (default: False)
             - mask_value: if some entries of the target matrix are missing, set them e.g. to -100 and then set
                           mask_value=-100 such that these entries are ignored when the backprop error is computed
             - l2_reg: float, l2 regularization strength of the hidden layers (default: 0.00000001)
